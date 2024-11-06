@@ -2098,6 +2098,7 @@ a.text-theme:hover,
 .widget_newsletter .form_text {
   color: #cfcfcf;
   margin-top: -0.45em;
+  font-size: 13px;
 }
 .widget_newsletter input {
   height: 56px;
@@ -2366,7 +2367,7 @@ a.text-theme:hover,
 .footer-text {
   color: #cccccc;
   margin-bottom: 32px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* Large devices */
@@ -2823,6 +2824,7 @@ a.text-theme:hover,
 }
 .footer-layout1 .widget_categories a {
   margin-bottom: 15px;
+  font-size: 13px;
 }
 .footer-layout1 .widget_title::after {
   content: "";
@@ -2858,7 +2860,7 @@ a.text-theme:hover,
   font-size: 18px;
 }
 .media-style1 .media-body .media-info {
-  font-size: 16px;
+  font-size: 13px;
   color: var(--smoke-color);
   margin-bottom: 0;
 }
