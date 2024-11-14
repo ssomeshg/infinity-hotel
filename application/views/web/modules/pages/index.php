@@ -1,0 +1,469 @@
+   <!--==============================
+    Hero Area
+    ============================== -->
+    <div class="hero-layout1">
+        <div class="position-relative">
+            <div class="vs-carousel hero-slider1" data-slide-show="1" data-autoplay="true" data-fade="true">
+                <!-- First Slide with Video Background -->
+                <div class="hero-slide">
+                    <video autoplay muted loop playsinline class="video-bg">
+                        <source src="<?php echo base_url() ?>assets/web/img/videos/hero-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-7 mx-auto">
+                                <div class="hero-content text-center">
+                                    <h1 class="hero-title">Discover the Beauty of Andaman Islands</h1>
+                                    <p class="hero-text">Your Gateway to Andaman’s Tropical Paradise</p>
+                                    <a href="#" class="vs-btn">Discover More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second Slide with Image Background -->
+                <div class="hero-slide" data-bg-src="<?php echo base_url() ?>assets/web/img/bg/hero-bg-1-2.jpg">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-7 mx-auto">
+                                <div class="hero-content text-center">
+                                    <h1 class="hero-title">Discover the Beauty of Andaman Islands</h1>
+                                    <p class="hero-text">Explore the Wonders of Andaman: Nature, Adventure & Relaxation</p>
+                                    <a href="#" class="vs-btn">Discover More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div>
+                <button class="icon-btn slick-prev" data-slick-prev=".hero-slider1"><i class="fas fa-angle-double-left"></i></button>
+                <button class="icon-btn slick-next" data-slick-next=".hero-slider1"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+        </div>
+    </div>
+      
+
+    <!-- Form Section -->
+    <div class="service-layout1">
+        <div class="container">
+           <div class="">
+                <div class="row form-comp p-4 bg-white shadow-lg rounded-2">
+                    <div class="col-md-6 mb-2 col-lg-3">
+                        <label for="">Location</label>
+                        <select name="" id="">
+                            <option value="Select Your Destination">Select Your Destination</option>
+                            <option value="Havelock">Havelock</option>
+                            <option value="Port Blair">Port Blair</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-2 col-lg-3">
+                        <label for="">Hotel</label>
+                        <select name="" id="">
+                            <option value="Select Your Hotel">Select Your Hotel</option>
+                            <option value="Havelock">Havelock</option>
+                            <option value="Port Blair">Port Blair</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-2 col-lg-2">
+                        <label for="">Check In</label>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div class="col-md-6 mb-2 col-lg-2"> <label for="">Check Out</label>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div class="col-md-12 mb-2 col-lg-2 d-flex align-items-end">
+                        <a href="" class="vs-btn rounded-1" >Book Now</a>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+
+
+    <!--==============================
+    About Area
+    ============================== -->
+    <section class="about-layout2 space">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="title-area wow fadeInUp wow-animated" data-wow-delay="0.3s">
+                            <span class="sec-subtitle">Welcome to Hotel Infinity Andaman</span>
+                            <h6 class="sec-title">Your Comfort, Our Priority – Experience the Best of Port Blair at Hotel Innfinity</h6>
+                        </div>
+                        <p class="about-text">Located in the heart of Port Blair, Hotel Innfinity Andaman offers an exceptional blend of modern amenities, central location, and unmatched hospitality. Whether you are visiting for business, leisure, or a quick stopover, our hotel is the perfect choice for travelers seeking comfort, convenience, and ease of access to key landmarks in the Andaman Islands.
+                        </p>
+                      
+                       
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <div class="about-logo">
+                          <img src="<?php echo base_url() ?>assets/web/img/service/selling-img-1-2.png" alt="white logo 2">
+                        </div>
+                        <img src="<?php echo base_url() ?>assets/web/img/about/about-2-1.jpg" alt="about img 1 1" class="img1 rounded-2">
+                        <img src="<?php echo base_url() ?>assets/web/img/about/about-2-2.jpg" alt="about img 2 2" class="img2 rounded-2">
+                      </div>
+                </div>
+            </div>
+         
+        </div>
+    </section>
+    <!--==============================
+    Product Area
+    ============================== -->
+    <section class="product-layout1 bg-smoke space">
+        <div class="container">
+            <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s">
+                
+                <span class="sec-subtitle">Stays, Tours & Cuisine</span>
+                <h2 class="sec-title">Rooms & tariff</h2>
+            </div>
+            <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-autoplay="true" data-arrows="false" data-dots="true" data-center-mode="true">
+                <div class="col-lg-3">
+                    <div class="product-style1">
+                        <div class="product-img">
+                            <img src="<?php echo base_url() ?>assets/web/img/product/product-1-1.png" alt="product img">
+                        </div>
+                        <div class="product-meta">30% Off</div>
+                        <div class="product-about">
+                            <h2 class="product-title"><a href="">Deluxe Room</a></h2>
+                            <p class="text ">Extra spacious AC rooms, with all mordern facilities, provision for extra matress at additional cost of Rs.500.
+                            </p>
+                            <span class="price"> Tariff : Rs. 2,100 <span class="gst-text">+GST</span> </span>
+                            <div class="list-style1">
+                                <ul class="list-unstyled">
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Complimentary Breakfast</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>24 hours Power Backup</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Air Conditioner</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Lift Facility</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Geyser</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Intercom</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Free Wifi</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Room Service</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Muti Cuisine AC Restaurent</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>RO Drinking Water</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>CCTV Suveillence</li>
+
+                                </ul>
+                            </div>
+                            <a href="#" class="vs-btn">Book Now</a>
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-style1">
+                        <div class="product-img">
+                            <img src="<?php echo base_url() ?>assets/web/img/product/product-1-2.png" alt="product img">
+                        </div>
+                        <div class="product-meta">30% Off</div>
+                        <div class="product-about">
+                            <h2 class="product-title"><a href="">Semi-Deluxe Room</a></h2>
+                            <p class="text ">Twin sharing AC rooms with all modern facilities. Best suitable for couples and family with small children below 5 years.
+                            </p>
+                            <span class="price"> Tariff : Rs. 1,900 <span class="gst-text">+GST</span> </span>
+                            <div class="list-style1">
+                                <ul class="list-unstyled">
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Complimentary Breakfast</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>24 hours Power Backup</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Air Conditioner</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Lift Facility</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Geyser</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Intercom</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Free Wifi</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Room Service</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Muti Cuisine AC Restaurent</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>RO Drinking Water</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>CCTV Suveillence</li>
+
+                                </ul>
+                            </div>
+                            <a href="#" class="vs-btn">Book Now</a>
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-style1">
+                        <div class="product-img">
+                            <img src="<?php echo base_url() ?>assets/web/img/product/product-1-1.png" alt="product img">
+                        </div>
+                        <div class="product-meta">30% Off</div>
+                        <div class="product-about">
+                            <h2 class="product-title"><a href="">Deluxe Room</a></h2>
+                            <p class="text ">Extra spacious AC rooms, with all mordern facilities, provision for extra matress at additional cost of Rs.500.
+                            </p>
+                            <span class="price"> Tariff : Rs. 2,100 <span class="gst-text">+GST</span> </span>
+                            <div class="list-style1">
+                                <ul class="list-unstyled">
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Complimentary Breakfast</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>24 hours Power Backup</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Air Conditioner</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Lift Facility</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Geyser</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Intercom</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Free Wifi</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Room Service</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Muti Cuisine AC Restaurent</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>RO Drinking Water</li>
+                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>CCTV Suveillence</li>
+
+                                </ul>
+                            </div>
+                            <a href="#" class="vs-btn">Book Now</a>
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+ 
+
+        <!--==============================
+    Project Area
+    ============================== -->
+    <section class="project-layout1 space">
+        <div class="container">
+            <div class="title-area wow fadeInUp wow-animated" data-wow-delay="0.3s">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="title-left">
+                        <span class="sec-subtitle">Our Popular package</span>
+                        <h2 class="sec-title">Tour Package</h2>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="row " data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2"  data-autoplay="true" data-arrows="false" data-center-mode="true">
+                <div class="col-lg-4">
+                    <div class="project-style1">
+                        <div class="project-img">
+                            <img src="<?php echo base_url() ?>assets/web/img/project/project-img-1-1.jpg" alt="project-img">
+                            <span class="price">Starting @ - ₹ 24950</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title"><a href="#">Family package</a></h3>
+                            <p class="project-text">Experience our Family Package in Andaman</p>
+                            <div class="link-btn">
+                                <a href="#">View Our Packages<i class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="project-style1">
+                        <div class="project-img">
+                            <img src="<?php echo base_url() ?>assets/web/img/project/project-img-1-2.jpg" alt="project-img">
+                            <span class="price">Starting @ - ₹ 32550</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title"><a href="#">Romance package</a></h3>
+                            <p class="project-text">Romantic Andaman escape: cozy rooms, special couple rates</p>
+                            <div class="link-btn">
+                                <a href="#">View Our Packages<i class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="project-style1">
+                        <div class="project-img">
+                            <img src="<?php echo base_url() ?>assets/web/img/project/project-img-1-3.jpg" alt="project-img">
+                            <span class="price">Starting @ - ₹ 10999</span>
+                           
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title"><a href="#">Group Package</a></h3>
+                            <p class="project-text">Andaman group package: spacious rooms, great group rates</p>
+                            <div class="link-btn">
+                                <a href="#">View Our Packages<i class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              
+            </div>
+            <span class="notice">Need help planning your stay or booking a tour? <a href="tel:+91-3192-235888">Call Us: +91-3192-235888</a></span>
+        </div>
+    </section>
+
+    <!--==============================
+    Blog Area
+    ============================== -->
+    <section class="blog-layout1 space">
+        <div class="container">
+            <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s">
+                <span class="sec-subtitle">Blog</span>
+                <h2 class="sec-title">Our Blogs</h2>
+            </div>
+            <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-autoplay="true" data-arrows="true">
+                <div class="col-lg-4">
+                    <div class="vs-blog blog-single">
+                        <div class="blog-img">
+                            <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
+                            </div>
+                            <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
+                            <div class="blog-inner-author">
+                                <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
+                                <div class="text">
+                                    by <a href="#">Jakki James</a>
+                                    <a href="#" class="blog-date">Dec 13, 2024</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="vs-blog blog-single">
+                        <div class="blog-img">
+                            <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
+                            </div>
+                            <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
+                            <div class="blog-inner-author">
+                                <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
+                                <div class="text">
+                                    by <a href="#">Jakki James</a>
+                                    <a href="#" class="blog-date">Dec 13, 2024</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="vs-blog blog-single">
+                        <div class="blog-img">
+                            <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
+                            </div>
+                            <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
+                            <div class="blog-inner-author">
+                                <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
+                                <div class="text">
+                                    by <a href="#">Jakki James</a>
+                                    <a href="#" class="blog-date">Dec 13, 2024</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="vs-blog blog-single">
+                        <div class="blog-img">
+                            <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
+                            </div>
+                            <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
+                            <div class="blog-inner-author">
+                                <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
+                                <div class="text">
+                                    by <a href="#">Jakki James</a>
+                                    <a href="#" class="blog-date">Dec 13, 2024</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="blog-btn">
+                <a href="#" class="vs-btn">View All Blogs</a>
+            </div>
+        </div>
+    </section>
+      <!--==============================
+    Testmonial Area
+    ============================== -->
+    <section class="testimonial-layout2 space" >
+        <div class="container">
+            <div class="title-area text-center wow fadeInUp wow-animated" data-wow-delay="0.3s">
+                <span class="sec-subtitle">What Does The Customer Have To Say?</span>
+                <h2 class="sec-title">Clients Testimonials</h2>
+            </div>
+            <div class="row justify-content-center ">
+                <div class="col-lg-10">
+                    <div class="vs-carousel" data-arrows="false" data-center-mode="left" data-dots="true" data-autoplay="true" data-slide-show="1">
+                        <div class="testi-style2">
+                            <p class="testi-text">
+                                Lorem ipsum dolor sit amet, consec adipiscing elit, sed do  eiusmod tempor 
+                                incididunt ut labore et dolore magna aliq ua. Ut enim ad minim venia quis nostrud 
+                                exercitation ullam mpor incididunt co laboris.
+                            </p>
+                            <div class="auther-inner">
+                                <div class="auther-img">
+                                    <img src="<?php echo base_url() ?>assets/web/img/testimonial/testi-img-1-1.png" alt="testimonial">
+                                    <div class="testi-icon"><i class="far fa-quote-left"></i></div>
+                                </div>
+                                <div class="auther-content">
+                                    <h3 class="name h5">Thomas Willimes</h3>
+                                    <span class="designation">Island Adventure Specialist</span>
+
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-style2">
+                            <p class="testi-text">
+                                Lorem ipsum dolor sit amet, consec adipiscing elit, sed do  eiusmod tempor 
+                                incididunt ut labore et dolore magna aliq ua. Ut enim ad minim venia quis nostrud 
+                                exercitation ullam mpor incididunt co laboris.
+                            </p>
+                            <div class="auther-inner">
+                                <div class="auther-img">
+                                    <img src="<?php echo base_url() ?>assets/web/img/testimonial/testi-img-1-1.png" alt="testimonial">
+                                    <div class="testi-icon"><i class="far fa-quote-left"></i></div>
+                                </div>
+                                <div class="auther-content">
+                                    <h3 class="name h5">Thomas Willimes</h3>
+                                    <span class="designation">Andaman Tour Guide</span>
+
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
