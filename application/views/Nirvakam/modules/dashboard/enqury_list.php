@@ -10,24 +10,22 @@
                         <thead>
                             <tr class="table-dark">
                                 <th class="text-white">S.No</th>
-                                <th class="text-white">Name</th> 
-                                <th class="text-white">Mobile</th>
-                                <th class="text-white">Service</th>
-                                <th class="text-white">Appointment Date</th>
-                                <th class="text-white">Appointment Time</th>
+                                <th class="text-white">Room Type</th> 
+                                <th class="text-white">No Of Rooms</th>
+                                <th class="text-white">Check In</th>
+                                <th class="text-white">Check_out</th>
                                 <th class="text-white">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $i = 1;
-                            foreach ($appointment as $row): ?>
+                            foreach ($enqury as $row): ?>
                                 <tr>
                                     <td><?php echo $i++; ?></td>
-                                    <td><?php echo $row->name; ?></td>
-                                    <td><?php echo $row->phone_number; ?></td>
-                                    <td><?php echo $row->service; ?></td>
-                                    <td><?php echo $row->appointment_date; ?></td>
-                                    <td><?php echo $row->appointment_time; ?></td>
+                                    <td><?php echo $row->room_type; ?></td>
+                                    <td><?php echo $row->no_of_rooms; ?></td>
+                                    <td><?php echo $row->check_in; ?></td>
+                                    <td><?php echo $row->check_out; ?></td>
                                     <td>
 									<a href="<?php echo base_url() . 'Web/appointment_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
 									</td>

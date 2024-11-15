@@ -26,9 +26,9 @@ class Dashboard extends CI_Controller {
         $this->load->view($this->data['theme'] . '/template');
     }
 
-    public function appointment_list() {
-		$this->data['appointment'] = $this->Common->get_records("tbl_appointment","*",array('status' => 0));
-        $this->data['page'] = 'appointment_list';
+    public function enqury_list() {
+		$this->data['enqury'] = $this->Common->get_records("tbl_enqury","*",array('status' => 1));
+        $this->data['page'] = 'enqury_list';
         $this->load->vars($this->data);
         $this->load->view($this->data['theme'] . '/template');
     }

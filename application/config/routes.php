@@ -66,7 +66,7 @@ $route['package/(:any)'] = 'web/package_list/$1';
 //$route['packages/(:any)/(:any)'] = 'web/package_type/$1/$2';
 $route['explore/(:num)'] = 'web/explore/$1';
 
-$route['appointment_save'] = 'Web/appointment_save';
+$route['enqury_save'] = 'Web/enqury_save';
 $route['contact_save'] = 'Web/contact_save';
 
 // Nirvakam 
@@ -96,7 +96,7 @@ $route['package_list'] = 'Package/package_list';
 $route['package_active_save'] = 'Package/package_active_save';
 $route['package_plan_update'] = 'Package/package_plan_update';
 
-$route['appointment_list'] = 'Dashboard/appointment_list';
+$route['enqury_list'] = 'Dashboard/enqury_list';
 $route['contact_list'] = 'Dashboard/contact_list';
 
 $route['blog_create'] = 'Blog';

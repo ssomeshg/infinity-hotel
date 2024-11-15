@@ -50,10 +50,12 @@
     <div class="service-layout1">
         <div class="container">
            <div class="">
+           <form action="" method="POST" id="enqury_form">
                 <div class="row form-comp p-4 bg-white shadow-lg rounded-2">
+                    
                     <div class="col-md-6 mb-2 col-lg-3">
                         <label for="">Room Type</label>
-                        <select name="" id="">
+                        <select name="room_type" id="room_type">
                             <option value="Select Your Destination">Room Type</option>
                             <option value="Delux">Delux</option>
                             <option value="Semi Delux">Semi Delux</option>
@@ -61,7 +63,7 @@
                     </div>
                     <div class="col-md-6 mb-2 col-lg-3">
                         <label for="">No Of Rooms</label>
-                        <select name="" id="">
+                        <select name="no_of_rooms" id="no_of_rooms">
                             <option value="Select Your Hotel">Select Your Room</option>
                             <option value="Havelock">1</option>
                             <option value="Port Blair">2</option>
@@ -72,15 +74,17 @@
 					
                     <div class="col-md-6 mb-2 col-lg-2">
                         <label for="">Check In</label>
-                        <input type="date" name="" id="">
+                        <input type="date" name="check_in" id="check_in">
                     </div>
                     <div class="col-md-6 mb-2 col-lg-2"> <label for="">Check Out</label>
-                        <input type="date" name="" id="">
+                        <input type="date" name="check_out" id="check_out">
                     </div>
                     <div class="col-md-12 mb-2 col-lg-2 d-flex align-items-end">
-                        <a href="" class="vs-btn rounded-1" >Book Now</a>
+                        <button type="submit" class="vs-btn rounded-1" >Book Now</button>
                     </div>
+                    
                 </div>
+                </form>
            </div>
         </div>
     </div>
@@ -436,3 +440,57 @@
             </div>
         </div>
     </section>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById("enqury_form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            document.querySelectorAll('.error').forEach((span) => {
+                span.innerText = '';
+            });
+
+            fetch('Web/enqury_save', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        Swal.fire({
+                            title: "Success",
+                            text: data.message,
+                            icon: "success",
+                            confirmButtonText: "Okay",
+                            allowOutsideClick: false
+                        }).then(() => {
+                            location.reload();
+                        });
+                    } else {
+                        if (data.errors) {
+                            if (data.errors.name) {
+                                document.getElementById('room_type').innerText = data.errors.name;
+                            }
+                        } else {
+                            Swal.fire({
+                                title: "Error",
+                                text: data.message,
+                                icon: "error",
+                                confirmButtonText: "Okay"
+                            });
+                        }
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: "Something went wrong!",
+                        icon: "error",
+                        confirmButtonText: "Okay"
+                    });
+                });
+        });
+    </script>

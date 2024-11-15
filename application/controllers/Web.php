@@ -160,86 +160,53 @@ class Web extends CI_Controller
 		$this->load->view($this->data['theme'] . '/template');
 	}
 
-	public function appointment_save()
+	public function enqury_save()
 	{
 		$this->form_validation->set_error_delimiters('', '');
-		$this->form_validation->set_rules('name', 'Name', 'required');
-		$this->form_validation->set_rules('phone_number', 'Phone Number', 'required|regex_match[/^[0-9]{10}$/]', ['regex_match' => 'Phone Number must be 10 digits.']);
+		$this->form_validation->set_rules('room_type', 'room_type', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$errors = [
-				'name' => form_error('name'),
-				'phone_number' => form_error('phone_number')
+				'room_type' => form_error('name')
 			];
 			echo json_encode(['status' => 'error', 'errors' => $errors]);
 		} else {
-			$recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
-			$userIp = $this->input->ip_address();
-			$secret = '6LdSQz4qAAAAAK8lHo9oi4JdtSBGSE58sr7wB6jN';
-			$url = 'https://www.google.com/recaptcha/api/siteverify';
+			// $recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+			// $userIp = $this->input->ip_address();
+			// $secret = '6LdSQz4qAAAAAK8lHo9oi4JdtSBGSE58sr7wB6jN';
+			// $url = 'https://www.google.com/recaptcha/api/siteverify';
 
-			$response = file_get_contents($url . '?secret=' . $secret . '&response=' . $recaptchaResponse . '&remoteip=' . $userIp);
-			$status = json_decode($response, true);
+			// $response = file_get_contents($url . '?secret=' . $secret . '&response=' . $recaptchaResponse . '&remoteip=' . $userIp);
+			// $status = json_decode($response, true);
 
-			if ($status['success']) {
+			// if ($status['success']) {
 				$values = [
-					'name' => $this->input->post('name'),
-					'phone_number' => $this->input->post('phone_number'),
-					'address' => $this->input->post('address'),
-					'service' => $this->input->post('service'),
-					'appointment_date' => $this->input->post('appointment_date'),
-					'appointment_time' => $this->input->post('appointment_time'),
-					'message' => $this->input->post('message')
+					'room_type' => $this->input->post('room_type'),
+					'no_of_rooms' => $this->input->post('no_of_rooms'),
+					'check_in' => $this->input->post('check_in'),
+					'check_out' => $this->input->post('check_out'),
 				];
 
-				$insert_id = $this->Common->insert('tbl_appointment', $values);
+				$insert_id = $this->Common->insert('tbl_enqury', $values);
 				if ($insert_id) {
-					echo json_encode(['status' => 'success', 'message' => 'Your appointment has been successfully saved!']);
+					echo json_encode(['status' => 'success', 'message' => 'Your Enquery has been successfully saved!']);
 				} else {
-					echo json_encode(['status' => 'error', 'message' => 'Failed to add appointment.']);
+					echo json_encode(['status' => 'error', 'message' => 'Failed to add Enquery.']);
 				}
-			} else {
-				echo json_encode(['status' => 'error', 'message' => 'reCAPTCHA verification failed. Please try again.']);
-			}
+			// } else {
+			// 	echo json_encode(['status' => 'error', 'message' => 'reCAPTCHA verification failed. Please try again.']);
+			// }
 		}
-
-		// $values['name'] = $this->input->post('name');
-		// $values['phone_number'] = $this->input->post('phone_number');
-		// $values['address'] = $this->input->post('address');
-		// $values['service'] = $this->input->post('service');
-		// $values['appointment_date'] = $this->input->post('appointment_date');
-		// $values['appointment_time'] = $this->input->post('appointment_time');
-		// $values['message'] = $this->input->post('message');
-
-		// $recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
-		// $userIp = $this->input->ip_address();
-		// $secret = '6LdSQz4qAAAAAK8lHo9oi4JdtSBGSE58sr7wB6jN';
-		// $url = 'https://www.google.com/recaptcha/api/siteverify';
-
-		// $response = file_get_contents($url . '?secret=' . $secret . '&response=' . $recaptchaResponse . '&remoteip=' . $userIp);
-		// $status = json_decode($response, true);
-
-		// if ($status['success']) {
-		// 	$insert_id = $this->Common->insert('tbl_appointment', $values);
-		// 	if ($insert_id) {
-
-		// 		echo json_encode(['status' => 'success', 'message' => 'Your appointment has been successfully saved!']);
-		// 	} else {
-		// 		echo json_encode(['status' => 'error', 'message' => 'Failed to add appointment.']);
-		// 	}
-		// } else {
-		// 	echo json_encode(['status' => 'error', 'message' => 'reCAPTCHA verification failed. Please try again.']);
-		// }
 	}
 
 	public function appointment_delete($id)
 	{
 
 		$where['id'] = $id;
-		$values['status'] = 1;
-		$this->Common->update('tbl_appointment', $values, $where);
-		$this->session->set_flashdata('success', 'Appointment deleted successfully');
-		redirect('appointment_list');
+		$values['status'] = 0;
+		$this->Common->update('tbl_enqury', $values, $where);
+		$this->session->set_flashdata('success', 'Enqury deleted successfully');
+		redirect('enqury_list');
 	}
 
 	public function contact_save()

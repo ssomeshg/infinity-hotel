@@ -132,6 +132,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item mt-2">
+            <a href="<?= base_url() . 'enqury_list' ?>" class="menu-link text-white">
+              <i class="menu-icon tf-icons bx bxs-food-menu"></i>
+              <div>Enqury List</div>
+            </a>
+          </li>
           <!-- <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
               <i class="menu-icon tf-icons bx bxs-file"></i>
@@ -191,12 +197,6 @@
             </a>
           </li>
 
-          <li class="menu-item mt-2">
-            <a href="<?= base_url() . 'appointment_list' ?>" class="menu-link text-white">
-              <i class="menu-icon tf-icons bx bxs-food-menu"></i>
-              <div>Appointment</div>
-            </a>
-          </li>
           <li class="menu-item mt-2">
             <a href="<?= base_url() . 'contact_list' ?>" class="menu-link text-white">
               <i class="menu-icon tf-icons bx bxs-contact"></i>
