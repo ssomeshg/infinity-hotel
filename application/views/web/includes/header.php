@@ -59,27 +59,34 @@
                         
                     </li>
                     <li>
-                        <a href="#">About Us</a>
+                        <a href="<?php echo base_url() .'about-us' ?>">About Us</a>
                     </li>
                     <li>
-                        <a href="#">Rooms & Tariff</a>
+                        <a href="<?php echo base_url() .'rooms-tariff' ?>">Rooms & Tariff</a>
+                        
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Tour Packages</a>
+						
+						 <ul class="sub-menu">
+                         <?php $i = 1;
+                foreach ($pack as $menu) : ?>
+                            <li><a href="<?php echo base_url('package/' .url_title($menu->category_name, '-', TRUE)); ?>"><?php echo $menu->category_name; ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
                         
                     </li>
                     <li>
-                        <a href="<?php echo base_url() .'package-page' ?>">Tour Packages</a>
+                        <a href="<?php echo base_url() .'gallery' ?>">Gallery</a>
                         
                     </li>
                     <li>
-                        <a href="#">Gallery</a>
-                        
-                    </li>
-                    <li>
-                        <a href="#">Blog</a>
+                        <a href="<?php echo base_url() .'blog' ?>">Blog</a>
                         
                     </li>
                   
                     <li>
-                        <a href="#">Contact Us</a>
+                        <a href="<?php echo base_url() .'contact' ?>">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -132,27 +139,33 @@
                                             
                                         </li>
                                         <li>
-                                            <a href="#">About Us</a>
+                                            <a href="<?php echo base_url() .'about-us' ?>">About Us</a>
                                         </li>
                                         <li>
-                                            <a href="#">Rooms & Tariff</a>
+                                            <a href="<?php echo base_url() .'rooms-tariff' ?>">Rooms & Tariff</a>
+                                            
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Tour Packages</a>
+											 <ul class="sub-menu">
+                                             <?php $i = 1;
+                foreach ($pack as $menu) : ?>
+                            <li><a href="<?php echo base_url('package/' .url_title($menu->category_name, '-', TRUE)); ?>"><?php echo $menu->category_name; ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
                                             
                                         </li>
                                         <li>
-                                            <a href="<?php echo base_url() .'package-page' ?>">Tour Packages</a>
+                                            <a href="<?php echo base_url() .'gallery' ?>">Gallery</a>
                                             
                                         </li>
                                         <li>
-                                            <a href="#">Gallery</a>
-                                            
-                                        </li>
-                                        <li>
-                                            <a href="#">Blog</a>
+                                            <a href="<?php echo base_url() .'blog' ?>">Blog</a>
                                             
                                         </li>
                                       
                                         <li>
-                                            <a href="#">Contact Us</a>
+                                            <a href="<?php echo base_url() .'contact' ?>">Contact Us</a>
                                         </li>
                                     </ul>
                                 </nav>

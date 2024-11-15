@@ -16,7 +16,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <form action="<?php echo base_url('package/save_type_package'); ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+            <form action="<?= base_url() . 'save_type_package' ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
               <input type="hidden" id="type_id" name="type_id">
               <div class="col-12">
                 <label class="form-label" for="category_name">Package Name</label>

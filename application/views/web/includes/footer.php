@@ -42,7 +42,7 @@
                         <div class="widget footer-widget">
                             <div class="vs-widget-about">
                                 <div class="footer-logo">
-                                    <a href="index.html">The Infinnity Hotel</a>
+                                    <a href="index.html">The Innfinnity Hotel</a>
                                 </div>
                                 <p class="footer-text">A well appointed city hotel located in the heart of capital city Port Blair and equipped with all modern amenities like AC, Lift, Power Backup, Intercomm, Geyser, Multi Cuisine AC Restaurant and Travellers Help Desk. Most centrally located, hardly 5 minutes’ drive from Veer Savarkar International Airport, Port Blair and 5 minutes’ drive from the famous Cellular Jail and 2 minutes ride from main Harbor for Havelock Island. A very unique hotel with all modern day needs, Hotel Innfinity is one of the finest in class. It successfully combines today's amenities, services and comforts with the graceful way of life that belongs to a travellers need.</p>
                                 <div class="footer-social">
@@ -90,7 +90,7 @@
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-auto text-center">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="index.html">The Infinnity-hotel</a>. All Rights Reserved By <a href="">Infinnity-Hotel</a></p>
+                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="index.html">The Innfinnity-hotel</a>. All Rights Reserved By <a href="">Innfinnity-Hotel</a></p>
                     </div>
                   
                 </div>

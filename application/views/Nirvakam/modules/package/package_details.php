@@ -10,7 +10,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <form action="<?php echo base_url();?>package/package_active_save" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+            <form action="<?= base_url() . 'package_active_save' ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
               <input class="form-control" type="hidden" id="formValidationFile" name="package_id" value="<?php echo isset($package) ? $package->id : ''; ?>">
               <div id="container">
                 <div style="text-align:end;">

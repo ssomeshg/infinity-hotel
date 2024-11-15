@@ -15,7 +15,7 @@
         <div class="card">
           <div class="card-body">
 
-            <form action="<?php echo base_url(); ?>package/package_update" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+            <form action="<?= base_url() . 'package_update' ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
               <input type="hidden" name="id" value="<?php echo isset($package) ? $package->id : ''; ?>">
 
               <div class="col-md-6 fv-plugins-icon-container">

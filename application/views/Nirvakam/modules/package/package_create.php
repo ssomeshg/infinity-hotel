@@ -15,7 +15,7 @@
         <div class="card">
           <div class="card-body">
 
-            <form action="<?php echo base_url(); ?>package/package_save" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+            <form action="<?= base_url() . 'package_save' ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
 
 
               <div class="col-md-6 fv-plugins-icon-container">
@@ -25,7 +25,7 @@
                   <?php $i = 1;
                   foreach ($package as $row):
                   ?>
-                    <option name="package_title" value="<?php echo $row->id ?>"><?php echo $row->category_name ?></option>
+                    <option value="<?php echo $row->id ?>"><?php echo $row->category_name ?></option>
                   <?php endforeach; ?>
                 </select>
                 <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
@@ -38,7 +38,7 @@
                   <?php $i = 1;
                   foreach ($type as $row):
                   ?>
-                    <option name="package_type" value="<?php echo $row->id ?>"><?php echo $row->category_type ?></option>
+                    <option value="<?php echo $row->id ?>"><?php echo $row->category_type ?></option>
                   <?php endforeach; ?>
                 </select>
                 <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>

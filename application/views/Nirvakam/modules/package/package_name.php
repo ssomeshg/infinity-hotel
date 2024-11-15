@@ -16,7 +16,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <form action="<?php echo base_url('package/save_create_package'); ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+            <form action="<?= base_url() . 'save_create_package' ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
               <input type="hidden" id="category_id" name="category_id">
               <div class="col-12">
                 <label class="form-label" for="Category_name">Category Name</label>
@@ -92,7 +92,7 @@ $(document).ready(function() {
   // Function to fetch category details via AJAX
   function editCategory(id) {
     $.ajax({
-      url: '<?php echo base_url('Package/get_category_details'); ?>',
+      url: '<?= base_url() . 'get_category_details' ?>',
       type: 'POST',
       dataType: 'json',
       data: { id: id },

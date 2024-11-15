@@ -52,21 +52,24 @@
            <div class="">
                 <div class="row form-comp p-4 bg-white shadow-lg rounded-2">
                     <div class="col-md-6 mb-2 col-lg-3">
-                        <label for="">Location</label>
+                        <label for="">Room Type</label>
                         <select name="" id="">
-                            <option value="Select Your Destination">Select Your Destination</option>
-                            <option value="Havelock">Havelock</option>
-                            <option value="Port Blair">Port Blair</option>
+                            <option value="Select Your Destination">Room Type</option>
+                            <option value="Delux">Delux</option>
+                            <option value="Semi Delux">Semi Delux</option>
                         </select>
                     </div>
                     <div class="col-md-6 mb-2 col-lg-3">
-                        <label for="">Hotel</label>
+                        <label for="">No Of Rooms</label>
                         <select name="" id="">
-                            <option value="Select Your Hotel">Select Your Hotel</option>
-                            <option value="Havelock">Havelock</option>
-                            <option value="Port Blair">Port Blair</option>
+                            <option value="Select Your Hotel">Select Your Room</option>
+                            <option value="Havelock">1</option>
+                            <option value="Port Blair">2</option>
+							<option value="Havelock">3</option>
+                            <option value="Port Blair">4</option>
                         </select>
                     </div>
+					
                     <div class="col-md-6 mb-2 col-lg-2">
                         <label for="">Check In</label>
                         <input type="date" name="" id="">
@@ -92,7 +95,7 @@
                 <div class="col-lg-6">
                     <div class="about-content">
                         <div class="title-area wow fadeInUp wow-animated" data-wow-delay="0.3s">
-                            <span class="sec-subtitle">Welcome to Hotel Infinity Andaman</span>
+                            <span class="sec-subtitle">Welcome to Hotel Innfinity Andaman</span>
                             <h6 class="sec-title">Your Comfort, Our Priority – Experience the Best of Port Blair at Hotel Innfinity</h6>
                         </div>
                         <p class="about-text">Located in the heart of Port Blair, Hotel Innfinity Andaman offers an exceptional blend of modern amenities, central location, and unmatched hospitality. Whether you are visiting for business, leisure, or a quick stopover, our hotel is the perfect choice for travelers seeking comfort, convenience, and ease of access to key landmarks in the Andaman Islands.
@@ -104,9 +107,9 @@
                 <div class="col-lg-6">
                     <div class="about-img">
                         <div class="about-logo">
-                          <img src="<?php echo base_url() ?>assets/web/img/service/selling-img-1-2.png" alt="white logo 2">
+                          <img src="<?php echo base_url() ?>assets/web/img/about/selling-img-1-2.png" alt="white logo 2">
                         </div>
-                        <img src="<?php echo base_url() ?>assets/web/img/about/about-2-1.jpg" alt="about img 1 1" class="img1 rounded-2">
+                        <img src="<?php echo base_url() ?>assets/web/img/about/hotelinnfinity.png" alt="Hotel Innfinity" class="img1 rounded-2">
                         <img src="<?php echo base_url() ?>assets/web/img/about/about-2-2.jpg" alt="about img 2 2" class="img2 rounded-2">
                       </div>
                 </div>
@@ -124,11 +127,11 @@
                 <span class="sec-subtitle">Stays, Tours & Cuisine</span>
                 <h2 class="sec-title">Rooms & tariff</h2>
             </div>
-            <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-autoplay="true" data-arrows="false" data-dots="true" data-center-mode="true">
-                <div class="col-lg-3">
+            <div class="row vs-carousel" data-slide-show="2" data-lg-slide-show="2" data-md-slide-show="2" data-autoplay="true" data-arrows="false" data-dots="true" data-center-mode="true">
+                <div class="col-lg-6">
                     <div class="product-style1">
                         <div class="product-img">
-                            <img src="<?php echo base_url() ?>assets/web/img/product/product-1-1.png" alt="product img">
+                            <img src="<?php echo base_url() ?>assets/web/img/about/delux.gif" alt="Delux Room">
                         </div>
                         <div class="product-meta">30% Off</div>
                         <div class="product-about">
@@ -136,7 +139,9 @@
                             <p class="text ">Extra spacious AC rooms, with all mordern facilities, provision for extra matress at additional cost of Rs.500.
                             </p>
                             <span class="price"> Tariff : Rs. 2,100 <span class="gst-text">+GST</span> </span>
-                            <div class="list-style1">
+                            <div class ="row">
+							<div class="col-lg-6">
+							<div class="list-style1">
                                 <ul class="list-unstyled">
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Complimentary Breakfast</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>24 hours Power Backup</li>
@@ -144,6 +149,15 @@
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Lift Facility</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Geyser</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Intercom</li>
+                                    
+                                </ul>
+                            </div>
+							
+							</div>
+							<div class="col-lg-6">
+							<div class="list-style1">
+                                <ul class="list-unstyled">
+                                    
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Free Wifi</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Room Service</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Muti Cuisine AC Restaurent</li>
@@ -152,16 +166,19 @@
 
                                 </ul>
                             </div>
+							
+							</div>
+							</div>
                             <a href="#" class="vs-btn">Book Now</a>
                            
                         </div>
                         
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <div class="product-style1">
                         <div class="product-img">
-                            <img src="<?php echo base_url() ?>assets/web/img/product/product-1-2.png" alt="product img">
+                            <img src="<?php echo base_url() ?>assets/web/img/about/semidelux.gif" alt="Semi Delux Room">
                         </div>
                         <div class="product-meta">30% Off</div>
                         <div class="product-about">
@@ -169,7 +186,9 @@
                             <p class="text ">Twin sharing AC rooms with all modern facilities. Best suitable for couples and family with small children below 5 years.
                             </p>
                             <span class="price"> Tariff : Rs. 1,900 <span class="gst-text">+GST</span> </span>
-                            <div class="list-style1">
+                            <div class ="row">
+							<div class="col-lg-6">
+							<div class="list-style1">
                                 <ul class="list-unstyled">
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Complimentary Breakfast</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>24 hours Power Backup</li>
@@ -177,6 +196,15 @@
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Lift Facility</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Geyser</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Intercom</li>
+                                    
+                                </ul>
+                            </div>
+							
+							</div>
+							<div class="col-lg-6">
+							<div class="list-style1">
+                                <ul class="list-unstyled">
+                                    
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Free Wifi</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Room Service</li>
                                     <li><span class="icon"><i class="far fa-check-circle"></i></span>Muti Cuisine AC Restaurent</li>
@@ -185,45 +213,16 @@
 
                                 </ul>
                             </div>
+							
+							</div>
+							</div>
                             <a href="#" class="vs-btn">Book Now</a>
                            
                         </div>
                         
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="product-style1">
-                        <div class="product-img">
-                            <img src="<?php echo base_url() ?>assets/web/img/product/product-1-1.png" alt="product img">
-                        </div>
-                        <div class="product-meta">30% Off</div>
-                        <div class="product-about">
-                            <h2 class="product-title"><a href="">Deluxe Room</a></h2>
-                            <p class="text ">Extra spacious AC rooms, with all mordern facilities, provision for extra matress at additional cost of Rs.500.
-                            </p>
-                            <span class="price"> Tariff : Rs. 2,100 <span class="gst-text">+GST</span> </span>
-                            <div class="list-style1">
-                                <ul class="list-unstyled">
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Complimentary Breakfast</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>24 hours Power Backup</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Air Conditioner</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Lift Facility</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Geyser</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Intercom</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Free Wifi</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Room Service</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>Muti Cuisine AC Restaurent</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>RO Drinking Water</li>
-                                    <li><span class="icon"><i class="far fa-check-circle"></i></span>CCTV Suveillence</li>
-
-                                </ul>
-                            </div>
-                            <a href="#" class="vs-btn">Book Now</a>
-                           
-                        </div>
-                        
-                    </div>
-                </div>
+                
 
 
             </div>
@@ -246,53 +245,23 @@
                 </div>
             </div>
             <div class="row " data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2"  data-autoplay="true" data-arrows="false" data-center-mode="true">
+            <?php foreach ($packages as $pack) : ?>
                 <div class="col-lg-4">
                     <div class="project-style1">
                         <div class="project-img">
-                            <img src="<?php echo base_url() ?>assets/web/img/project/project-img-1-1.jpg" alt="project-img">
-                            <span class="price">Starting @ - ₹ 24950</span>
+                            <img src="<?php echo base_url('uploads/package/' . $pack->image); ?>" alt="project-img">
+                            <span class="price">Starting @ - ₹ <?php echo $pack->min_price; ?></span>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title"><a href="#">Family package</a></h3>
-                            <p class="project-text">Experience our Family Package in Andaman</p>
+                            <h3 class="project-title"><a href="<?php echo base_url('package/' .url_title($pack->category_name, '-', TRUE)); ?>"><?php echo $pack->category_name; ?></a></h3>
+                            <p class="project-text">Experience our <?php echo $pack->category_name; ?> in Andaman</p>
                             <div class="link-btn">
-                                <a href="#">View Our Packages<i class="fas fa-angle-double-right"></i></a>
+                                <a href="<?php echo base_url('package/' .url_title($pack->category_name, '-', TRUE)); ?>">View Our Packages<i class="fas fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="project-style1">
-                        <div class="project-img">
-                            <img src="<?php echo base_url() ?>assets/web/img/project/project-img-1-2.jpg" alt="project-img">
-                            <span class="price">Starting @ - ₹ 32550</span>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title"><a href="#">Romance package</a></h3>
-                            <p class="project-text">Romantic Andaman escape: cozy rooms, special couple rates</p>
-                            <div class="link-btn">
-                                <a href="#">View Our Packages<i class="fas fa-angle-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="project-style1">
-                        <div class="project-img">
-                            <img src="<?php echo base_url() ?>assets/web/img/project/project-img-1-3.jpg" alt="project-img">
-                            <span class="price">Starting @ - ₹ 10999</span>
-                           
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title"><a href="#">Group Package</a></h3>
-                            <p class="project-text">Andaman group package: spacious rooms, great group rates</p>
-                            <div class="link-btn">
-                                <a href="#">View Our Packages<i class="fas fa-angle-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+                <?php endforeach; ?>
               
             </div>
             <span class="notice">Need help planning your stay or booking a tour? <a href="tel:+91-3192-235888">Call Us: +91-3192-235888</a></span>

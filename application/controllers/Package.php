@@ -66,7 +66,7 @@ class Package extends CI_Controller
         } else {
             $this->package_model->create_package($Category_name, $source, $status);
         }
-        redirect('package/package_create');
+        redirect('package_category');
     }
 
     public function get_category_details()
@@ -118,7 +118,7 @@ class Package extends CI_Controller
         } else {
             $this->package_model->type_package($category_name,$Category_type, $source, $status);
         }
-        redirect('package/package_type');
+        redirect('package_type');
     }
 
     public function get_type_details()
@@ -138,19 +138,19 @@ class Package extends CI_Controller
     public function category_delete($id)
     {
         $result = $this->package_model->delete_category($id);
-        redirect('package/package_create');
+        redirect('package_category');
     }
 
     public function type_delete($id)
     {
         $result = $this->package_model->delete_type($id);
-        redirect('package/package_type');
+        redirect('package_type');
     }
 
     public function package_save()
     {
-        $package_title = $this->input->post('package_title');
-        $package_type = $this->input->post('package_type');
+        $package_title = $this->input->post('category_id');
+        $package_type = $this->input->post('type_id');
         $package_content = $this->input->post('package_content');
         $standard_cost = $this->input->post('standard_cost');
         $standard_price = $this->input->post('standard_price');
@@ -212,7 +212,7 @@ class Package extends CI_Controller
         $image_bundle = implode(',', $image_bundle);
 
         $this->package_model->save_package($package_title, $package_type, $package_content, $standard_cost, $standard_price,$standard_description ,$luxury_cost,$luxury_price,$luxury_description,$royal_cost,$royal_price,$royal_description, $adult, $child, $day_plans, $package_heading, $place, $package_inclusion, $package_exclusions, $source, $image_bundle, $status);
-        redirect('package/package_list');
+        redirect('package_list');
     }
 
     public function package_active($id)
@@ -245,16 +245,17 @@ class Package extends CI_Controller
             }
         }
 
-        redirect('package/package_list');
+        redirect('package_list');
     }
 
     public function package_edit($id)
     {
-        $data['package_list'] = $this->package_model->create_list();
-        $data['type_list'] = $this->package_model->type_list();
-        $data['package'] = $this->package_model->edit_package($id);
-        $data['content'] = "admin/package/package_edit";
-        $this->load->view('admin/template', $data);
+        $this->data['package_list'] = $this->package_model->create_list();
+        $this->data['type_list'] = $this->package_model->type_list();
+        $this->data['package'] = $this->package_model->edit_package($id);
+        $this->data['page'] = 'package_edit';
+        $this->load->vars($this->data);
+        $this->load->view($this->data['theme'] . '/template');
     }
 
     public function package_update()
@@ -323,13 +324,13 @@ class Package extends CI_Controller
 
         $this->package_model->update_package($package_title, $package_type, $package_content,  $standard_cost, $standard_price,$standard_description ,$luxury_cost,$luxury_price,$luxury_description,$royal_cost,$royal_price,$royal_description, $adult, $child, $day_plans, $package_heading, $place, $package_inclusion, $package_exclusions, $source, $image_bundle, $id);
 
-        redirect('package/package_list');
+        redirect('package_list');
     }
 
     public function package_delete($id)
     {
         $result = $this->package_model->delete_package($id);
-        redirect('package/package_list');
+        redirect('package_list');
     }
 
     public function edit_plan($id){
@@ -366,7 +367,7 @@ class Package extends CI_Controller
             }
         }
 
-        redirect('package/package_list');
+        redirect('package_list');
     }
 
     public function delete_plan()

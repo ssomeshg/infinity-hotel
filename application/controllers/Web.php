@@ -14,6 +14,8 @@ class Web extends CI_Controller
 
 		$this->load->model('Common_model', 'Common');
 		$this->load->model('Blog_model', 'blog');
+		$this->load->model('web_model','Web');
+		$this->load->model('package_model','package');
 
 		//$this->load->helper('text');
 		$this->load->library('form_validation');
@@ -21,6 +23,9 @@ class Web extends CI_Controller
 
 	public function index()
 	{
+		$this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
 		$this->data['page'] = 'index';
 		$this->load->vars($this->data);
 		$this->load->view($this->data['theme'] . '/template');
@@ -28,7 +33,9 @@ class Web extends CI_Controller
 
 	public function package_view()
 	{
-
+        $this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
 		$this->data['page'] = 'package-view';
 		$this->load->vars($this->data);
 		$this->load->view($this->data['theme'] . '/template');
@@ -41,26 +48,114 @@ class Web extends CI_Controller
 		$this->load->vars($this->data);
 		$this->load->view($this->data['theme'] . '/template');
 	}
+	
+	public function rooms_tariff()
+	{
+        $this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
+		$this->data['page'] = 'rooms_tariff';
+		$this->load->vars($this->data);
+		$this->load->view($this->data['theme'] . '/template');
+	}
+
+	public function about_us()
+	{
+        $this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
+		$this->data['page'] = 'about';
+		$this->load->vars($this->data);
+		$this->load->view($this->data['theme'] . '/template');
+	}
+	
+	public function gallery()
+	{
+        $this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
+		$this->data['page'] = 'gallery';
+		$this->load->vars($this->data);
+		$this->load->view($this->data['theme'] . '/template');
+	}
 
 	public function blog()
 	{
-		$this->data['blog'] = $this->Common->get_records("tbl_blog", "*", array('status' => 0));
+		$this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
 		$this->data['page'] = 'blog';
 		$this->load->vars($this->data);
 		$this->load->view($this->data['theme'] . '/template');
 	}
 
-	public function blog_view($id)
+	public function blog_view()
 	{
-		$this->data['blog'] = $this->blog->get_blog($id);
-
-		$this->data['meta'] = [
-			'meta_tag' => $this->data['blog']->meta_tag,
-			'meta_description' => $this->data['blog']->meta_description,
-			'meta_title' => $this->data['blog']->meta_title
-		];
-
+        $this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
 		$this->data['page'] = 'blog_view';
+		$this->load->vars($this->data);
+		$this->load->view($this->data['theme'] . '/template');
+	}
+	
+	public function contact()
+	{
+        $this->data['packages'] = $this->Web->package_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['type'] = $this->package->create_list();
+		$this->data['page'] = 'contact';
+		$this->load->vars($this->data);
+		$this->load->view($this->data['theme'] . '/template');
+	}
+
+	public function package_list($category_name)
+	{
+		$category = str_replace('-', ' ', $category_name); 
+		$category_id = $this->Web->get_category_name_id($category);
+		$this->session->set_userdata('pack_id', $category_id->id);
+
+		$this->data['type'] = $this->package->create_list();
+		$this->data['category_types'] = $this->package->type_list();
+		$this->data['category'] = $this->package->get_type();
+		$this->data['packages'] = $this->Web->get_package_by_title($category_id->id);
+		$this->data['pack'] = $this->package->get_packages();
+
+		$this->data['active_category_id'] = $category_id->id;
+
+		$this->data['page'] = 'package-page';
+		$this->load->vars($this->data);
+		$this->load->view($this->data['theme'] . '/template');
+	}
+
+	public function package_type($category_name, $category_type)
+	{
+		$category = str_replace('-', ' ', $category_name); 
+		$type = str_replace('-', ' ', $category_type);
+		
+		$category_id = $this->web_model->get_category_name_id($category);
+		$type_id = $this->web_model->get_category_type_id($type);
+
+		$this->data['type'] = $this->package_model->create_list();
+		$this->data['category_types'] = $this->package_model->type_list();
+		$this->data['category'] = $this->package_model->get_type();
+		$this->data['packages'] = $this->web_model->get_package_by_title_and_type($category_id->id, $type_id->id);
+		$this->data['pack'] = $this->package_model->get_packages();
+
+		$this->data['page'] = 'package-view';
+		$this->load->vars($this->data);
+		$this->load->view($this->data['theme'] . '/template');
+	}
+
+	public function explore($id)
+	{
+		$this->data['type'] = $this->package->create_list();
+		$this->data['category_types'] = $this->package->type_list();
+		$this->data['pack'] = $this->package->get_packages();
+		$this->data['package'] = $this->Web->get_package_by_id($id);
+		$this->data['plans'] = $this->Web->get_plans_by_package_id($id);
+
+		$this->data['page'] = 'package-view';
 		$this->load->vars($this->data);
 		$this->load->view($this->data['theme'] . '/template');
 	}

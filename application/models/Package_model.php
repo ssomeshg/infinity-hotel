@@ -161,8 +161,8 @@ class Package_model extends CI_Model
         $royal_description,$adult,$child, $day_plans,$package_heading,$place,$package_inclusion,
         $package_exclusions,$source, $image_bundle,$id) {
         $data = array(
-            'package_title' => $package_title,
-            'package_type' => $package_type,
+            'category_id' => $package_title,
+            'type_id' => $package_type,
             'package_content' => $package_content,
             'standard_cost' => $standard_cost,
             'standard_price' => $standard_price,

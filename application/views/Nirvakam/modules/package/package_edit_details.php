@@ -10,7 +10,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="<?php echo base_url(); ?>package/package_plan_update" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+                        <form action="<?= base_url() . 'package_plan_update' ?>" method="POST" enctype="multipart/form-data" id="formValidationExamples" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
                             <div style="text-align:end;">
 								<a id="addInputTextarea" class="extra-fields-customer btn btn-info" href="#" data-package-id="<?php echo $package_id; ?>"><i class='bx bx-plus'></i> Add </a>
                             </div>

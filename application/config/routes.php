@@ -56,8 +56,15 @@ $route['translate_uri_dashes'] = FALSE;
 //Web
 $route['package-page'] = 'Web/package_page';
 $route['package-view'] = 'Web/package_view';
+$route['about-us'] = 'Web/about_us';
+$route['rooms-tariff'] = 'Web/rooms_tariff';
 $route['blog'] = 'Web/blog';
-$route['blog_view/(:any)'] = 'Web/blog_view/$1';
+$route['blog-view'] = 'Web/blog_view';
+$route['gallery'] = 'Web/gallery';
+$route['contact'] = 'Web/contact';
+$route['package/(:any)'] = 'web/package_list/$1';
+//$route['packages/(:any)/(:any)'] = 'web/package_type/$1/$2';
+$route['explore/(:num)'] = 'web/explore/$1';
 
 $route['appointment_save'] = 'Web/appointment_save';
 $route['contact_save'] = 'Web/contact_save';
@@ -78,9 +85,16 @@ $route['save_changepassword'] = 'Nirvakam/save_changepassword';
 $route['dashboard'] = 'Dashboard';
 
 $route['package_category'] = 'Package/package_create';
+$route['save_create_package'] = 'Package/save_create_package';
+$route['get_category_details'] = 'Package/get_category_details';
 $route['package_type'] = 'Package/package_type';
+$route['save_type_package'] = 'Package/save_type_package';
 $route['package'] = 'Package';
+$route['package_save'] = 'Package/package_save';
+$route['package_update'] = 'Package/package_update';
 $route['package_list'] = 'Package/package_list';
+$route['package_active_save'] = 'Package/package_active_save';
+$route['package_plan_update'] = 'Package/package_plan_update';
 
 $route['appointment_list'] = 'Dashboard/appointment_list';
 $route['contact_list'] = 'Dashboard/contact_list';
