@@ -103,6 +103,10 @@ $route['blog_create'] = 'Blog';
 $route['blog_list'] = 'Blog/blog_list';
 $route['blog_save'] = 'Blog/blog_save';
 
+$route['gallery_create'] = 'Blog/gallery';
+$route['gallery_list'] = 'Blog/gallery_list';
+$route['gallery_save'] = 'Blog/gallery_save';
+
 $route['banner_create'] = 'Banner';
 $route['banner_list'] = 'Banner/banner_list';
 $route['banner_save'] = 'Banner/banner_save';

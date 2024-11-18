@@ -7,9 +7,18 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>The Infinnity Hotel</title>
     <meta name="author" content="Vecuro">
-    <meta name="description" content="The Infinnity Hotel || Best Hotel in Port Blair">
-    <meta name="keywords" content="The Infinnity Hotel || Best Hotel in Port Blair">
     <meta name="robots" content="INDEX,FOLLOW">
+    <?php if ($page == 'blog_view' && isset($meta)): ?>
+        <meta name="keywords" content="<?= $meta['meta_tag']; ?>">
+        <meta name="description" content="<?= $meta['meta_description']; ?>">
+        <meta property="og:title" content="<?= $meta['meta_title']; ?>" />
+        <meta property="og:description" content="<?= $meta['meta_description']; ?>" />
+    <?php else: ?>
+        <meta name="description" content="The Infinnity Hotel || Best Hotel in Port Blair">
+    <meta name="keywords" content="The Infinnity Hotel || Best Hotel in Port Blair">
+        <meta property="og:title" content="The Infinnity Hotel || Best Hotel in Port Blair" />
+        <meta property="og:description" content="The Infinnity Hotel || Best Hotel in Port Blair" />
+    <?php endif; ?>
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,6 +49,17 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/web/css/style.css">
 
 </head>
+<style>
+       .recaptcha-container {
+           transform: scale(0.85);
+           transform-origin: 0 0;
+       }
+
+       .recaptcha-container iframe {
+           height: 78px !important;
+           width: 300px !important;
+       }
+   </style>
 
 <body>
 

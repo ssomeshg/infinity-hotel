@@ -104,74 +104,35 @@
           </li>
 
           <li class="menu-item ">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
                 <i class="menu-icon tf-icons bx bx-package"></i>
                 <div data-i18n="Authentications">Package</div>
               </a>
               <ul class="menu-sub"> 
                 <li class="menu-item">
-                  <a href="<?= base_url() . 'package_category' ?>" class="menu-link" >
+                  <a href="<?= base_url() . 'package_category' ?>" class="menu-link text-white" >
                     <div>Package Category</div>
                   </a>
                 </li> 
                 <li class="menu-item">
-                  <a href="<?= base_url() . 'package_type' ?>" class="menu-link" >
+                  <a href="<?= base_url() . 'package_type' ?>" class="menu-link text-white" >
                     <div>Package Type</div>
                   </a>
                 </li> 				
                 <li class="menu-item">
-                  <a href="<?= base_url() . 'package' ?>" class="menu-link" >
+                  <a href="<?= base_url() . 'package' ?>" class="menu-link text-white" >
                     <div>Create Package</div>
                   </a>
                 </li>
 				
                 <li class="menu-item">
-                  <a href="<?= base_url() . 'package_list' ?>" class="menu-link" >
+                  <a href="<?= base_url() . 'package_list' ?>" class="menu-link text-white" >
                     <div>package List</div>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item mt-2">
-            <a href="<?= base_url() . 'enqury_list' ?>" class="menu-link text-white">
-              <i class="menu-icon tf-icons bx bxs-food-menu"></i>
-              <div>Enqury List</div>
-            </a>
-          </li>
-          <!-- <li class="menu-item ">
-            <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-              <i class="menu-icon tf-icons bx bxs-file"></i>
-              <div data-i18n="Authentications">Management</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="<?= base_url() . 'nirvakam_create' ?>" class="menu-link text-white">
-                  <div>Admin Create</div>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-
-          <!-- <li class="menu-item ">
-            <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-            <i class="menu-icon tf-icons bx bxs-photo-album"></i>
-              <div data-i18n="Authentications">Banner</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="<?= base_url() . 'banner_create' ?>" class="menu-link text-white">
-                  <div>create</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="<?= base_url() . 'banner_list' ?>" class="menu-link text-white">
-                  <div>List</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="menu-item ">
+            <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
               <i class="menu-icon tf-icons bx bxl-blogger"></i>
               <div data-i18n="Authentications">Blog</div>
@@ -189,6 +150,69 @@
               </li>
             </ul>
           </li>
+          <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
+            <i class="menu-icon tf-icons bx bxs-photo-album"></i>
+              <div data-i18n="Authentications">Banner</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="<?= base_url() . 'banner_create' ?>" class="menu-link text-white">
+                  <div>create</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="<?= base_url() . 'banner_list' ?>" class="menu-link text-white">
+                  <div>List</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
+            <i class="menu-icon tf-icons bx bxs-photo-album"></i>
+              <div data-i18n="Authentications">Gallery</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="<?= base_url() . 'gallery_create' ?>" class="menu-link text-white">
+                  <div>create</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="<?= base_url() . 'gallery_list' ?>" class="menu-link text-white">
+                  <div>List</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <li class="menu-item mt-2">
+            <a href="<?= base_url() . 'enqury_list' ?>" class="menu-link text-white">
+              <i class="menu-icon tf-icons bx bxs-food-menu"></i>
+              <div>Enqury List</div>
+            </a>
+          </li>
+          <li class="menu-item mt-2">
+            <a href="<?= base_url() . 'contact_list' ?>" class="menu-link text-white">
+              <i class="menu-icon tf-icons bx bxs-contact"></i>
+              <div>Contact Us Enquery</div>
+            </a>
+          </li>
+          <!-- <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
+              <i class="menu-icon tf-icons bx bxs-file"></i>
+              <div data-i18n="Authentications">Management</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="<?= base_url() . 'nirvakam_create' ?>" class="menu-link text-white">
+                  <div>Admin Create</div>
+                </a>
+              </li>
+            </ul>
+          </li> -->
+
+          <!-- 
 
           <li class="menu-item mt-2">
             <a href="<?= base_url() . 'video' ?>" class="menu-link text-white">
@@ -197,12 +221,7 @@
             </a>
           </li>
 
-          <li class="menu-item mt-2">
-            <a href="<?= base_url() . 'contact_list' ?>" class="menu-link text-white">
-              <i class="menu-icon tf-icons bx bxs-contact"></i>
-              <div>Contact Us Enquery</div>
-            </a>
-          </li> -->
+           -->
         </ul>
         <div class="menu-bar">
             <img src="<?php echo base_url() ?>assets/img/blue-icon.png" alt="menu">

@@ -5,7 +5,7 @@ class Blog_model extends CI_Model
 {
     public function getblog($id = NULL) {
 		
-        $this->db->where('status', 0);
+        $this->db->where('status', 1);
         if ($id) {
             $this->db->where('id', $id);
             return $this->db->get('tbl_blog')->row();
@@ -20,15 +20,26 @@ class Blog_model extends CI_Model
         return $query->result();
     }
 
-    public function get_blog($id = NULL) {
+    public function getgallery($id = NULL) {
 		
-        $this->db->where('status', 0);
+        $this->db->where('status', 1);
         if ($id) {
             $this->db->where('id', $id);
-            return $this->db->get('tbl_blog')->row();
+            return $this->db->get('tbl_gallery')->row();
         }
         $this->db->order_by('id', 'desc');
-        return $this->db->get('tbl_blog')->result();
+        return $this->db->get('tbl_gallery')->result();
+    }
+
+    public function getbanner($id = NULL) {
+		
+        $this->db->where('status', 1);
+        if ($id) {
+            $this->db->where('id', $id);
+            return $this->db->get('tbl_banner')->row();
+        }
+        $this->db->order_by('id', 'desc');
+        return $this->db->get('tbl_banner')->result();
     }
 
 

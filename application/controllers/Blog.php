@@ -28,7 +28,7 @@ class Blog extends CI_Controller {
     }
 
     public function blog_list(){
-        $this->data['blog'] = $this->Common->get_records("tbl_blog","*",array('status' => 0));
+        $this->data['blog'] = $this->Common->get_records("tbl_blog","*",array('status' => 1));
         $this->data['page'] = 'blog_list';
         $this->load->vars($this->data);
         $this->load->view($this->data['theme'] . '/template');
@@ -86,10 +86,79 @@ class Blog extends CI_Controller {
     public function blog_delete($id){
 
         $where['id'] = $id;
-		$values['status'] = 1;
+		$values['status'] = 0;
 		$this->Common->update('tbl_blog', $values, $where);
 		$this->session->set_flashdata('success', 'Blog deleted successfully');
 		redirect("blog_list");
+	}
+
+    public function gallery() {
+		
+        $this->data['page'] = 'gallery_create';
+        $this->load->vars($this->data);
+        $this->load->view($this->data['theme'] . '/template');
+    }
+
+    public function gallery_list(){
+        $this->data['gallery'] = $this->Common->get_records("tbl_gallery","*",array('status' => 1));
+        $this->data['page'] = 'gallery_list';
+        $this->load->vars($this->data);
+        $this->load->view($this->data['theme'] . '/template');
+    }
+
+    public function gallery_save() {
+		
+        $id = $where['id'] = $this->input->post('id');
+        $values['title'] = $this->input->post('title');
+        $values['description'] = $this->input->post('description');
+
+        if (isset($_FILES['image']['name']) && !empty($_FILES['image']['name'])) {
+            $config['upload_path'] = 'uploads/blog';
+            $config['allowed_types'] = 'jpg|png|jpeg|webp';
+            $config['file_name'] = rand() . time();
+
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('image')) {
+                $this->session->set_flashdata('error', "Please upload an image with dimensions 1568 * 789.");
+                redirect('gallery_create');
+                return;
+            } else {
+                $data = array('upload_data' => $this->upload->data());
+                $values['image'] = $data['upload_data']['file_name'];
+            }
+        }
+		if(!empty($id)){
+			$insert_id = $this->Common->update('tbl_gallery',$values,$where);
+			$this->session->set_flashdata('success', 'Gallery updated successfully.');
+		}else{
+			$insert_id = $this->Common->insert('tbl_blog',$values);
+			$this->session->set_flashdata('success', 'Gallery added successfully.');
+		}
+		
+        redirect("gallery_list");
+    }
+
+    public function gallery_edit($id = NULL) {
+		 
+        $this->data['gallery'] = null;
+
+		if ($id) {
+            $this->data['gallery'] = $this->blog->getgallery($id);
+        }
+		
+        $this->data['page'] = 'gallery_create';
+        $this->load->vars($this->data);
+        $this->load->view($this->data['theme'] . '/template');
+    }
+
+    public function gallery_delete($id){
+
+        $where['id'] = $id;
+		$values['status'] = 0;
+		$this->Common->update('tbl_gallery', $values, $where);
+		$this->session->set_flashdata('success', 'gallery deleted successfully');
+		redirect("gallery_list");
 	}
 
 }

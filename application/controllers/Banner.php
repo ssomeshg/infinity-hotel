@@ -16,7 +16,7 @@ class Banner extends CI_Controller {
         $this->data['base_url'] = base_url();
 
         $this->load->model('Common_model', 'Common');
-        $this->load->model('Before_after_model', 'before_after');
+        $this->load->model('Blog_model', 'blog');
 
     }
 
@@ -74,7 +74,7 @@ class Banner extends CI_Controller {
         $this->data['banner'] = null;
 
 		if ($id) {
-            $this->data['banner'] = $this->before_after->getbanner($id);
+            $this->data['banner'] = $this->blog->getbanner($id);
         }
 		
         $this->data['page'] = 'banner_create';

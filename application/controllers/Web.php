@@ -171,18 +171,21 @@ class Web extends CI_Controller
 			];
 			echo json_encode(['status' => 'error', 'errors' => $errors]);
 		} else {
-			// $recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
-			// $userIp = $this->input->ip_address();
-			// $secret = '6LdSQz4qAAAAAK8lHo9oi4JdtSBGSE58sr7wB6jN';
-			// $url = 'https://www.google.com/recaptcha/api/siteverify';
+			$recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+			$userIp = $this->input->ip_address();
+			$secret = '6LdSQz4qAAAAAK8lHo9oi4JdtSBGSE58sr7wB6jN';
+			$url = 'https://www.google.com/recaptcha/api/siteverify';
 
-			// $response = file_get_contents($url . '?secret=' . $secret . '&response=' . $recaptchaResponse . '&remoteip=' . $userIp);
-			// $status = json_decode($response, true);
+			$response = file_get_contents($url . '?secret=' . $secret . '&response=' . $recaptchaResponse . '&remoteip=' . $userIp);
+			$status = json_decode($response, true);
 
-			// if ($status['success']) {
+			if ($status['success']) {
 				$values = [
 					'room_type' => $this->input->post('room_type'),
 					'no_of_rooms' => $this->input->post('no_of_rooms'),
+					'name' => $this->input->post('name'),
+					'mobile' => $this->input->post('mobile'),
+					'location' => $this->input->post('location'),
 					'check_in' => $this->input->post('check_in'),
 					'check_out' => $this->input->post('check_out'),
 				];
@@ -193,9 +196,9 @@ class Web extends CI_Controller
 				} else {
 					echo json_encode(['status' => 'error', 'message' => 'Failed to add Enquery.']);
 				}
-			// } else {
-			// 	echo json_encode(['status' => 'error', 'message' => 'reCAPTCHA verification failed. Please try again.']);
-			// }
+			} else {
+				echo json_encode(['status' => 'error', 'message' => 'reCAPTCHA verification failed. Please try again.']);
+			}
 		}
 	}
 
@@ -259,7 +262,7 @@ class Web extends CI_Controller
 	{
 
 		$where['id'] = $id;
-		$values['status'] = 1;
+		$values['status'] = 0;
 		$this->Common->update('tbl_contact', $values, $where);
 		$this->session->set_flashdata('success', 'Contact deleted successfully');
 		redirect('contact_list');
