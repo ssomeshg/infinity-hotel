@@ -45,7 +45,7 @@
                        <div class="row g-3 vs-carousel" data-arrows="false" data-dots="true" data-autoplay="true" data-slide-show="2">
                            <?php $image_bundle = explode(',', $pac->image_bundle);
                             foreach ($image_bundle as $image) : ?>
-                               <div class="col-auto">
+                               <div class="col-auto img-pack">
                                    <a href="#"><img src="<?php echo base_url('uploads/package/' . trim($image)); ?>" alt="Blog Image"></a>
                                </div>
                            <?php endforeach; ?>

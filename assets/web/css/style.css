@@ -4920,6 +4920,11 @@ blockquote.vs-quote p {
 }
 /* Small devices */
 /*------------------- 4.12. selling  -------------------*/
+.img-pack{
+  height: 250px;
+  object-fit: cover;
+  width: 400px;
+}
 .selling-layout1 {
   position: relative;
 }
