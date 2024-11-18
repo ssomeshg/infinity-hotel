@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function ($) {
   ("use strict");
   /*=================================
@@ -842,3 +843,189 @@ function closeLightBox() {
     }
 }
 lightBoxContainer.addEventListener("click", closeLightBox);
+=======
+/**
+ * Main
+ */
+
+"use strict";
+
+let menu, animate;
+
+(function () {
+	// Initialize menu
+	//-----------------
+
+	let layoutMenuEl = document.querySelectorAll("#layout-menu");
+	layoutMenuEl.forEach(function (element) {
+		menu = new Menu(element, {
+			orientation: "vertical",
+			closeChildren: false,
+		});
+		// Change parameter to true if you want scroll animation
+		window.Helpers.scrollToActive((animate = false));
+		window.Helpers.mainMenu = menu;
+	});
+
+	// Initialize menu togglers and bind click on each
+	let menuToggler = document.querySelectorAll(".layout-menu-toggle");
+	menuToggler.forEach((item) => {
+		item.addEventListener("click", (event) => {
+			event.preventDefault();
+			window.Helpers.toggleCollapsed();
+		});
+	});
+
+	// Display menu toggle (layout-menu-toggle) on hover with delay
+	let delay = function (elem, callback) {
+		let timeout = null;
+		elem.onmouseenter = function () {
+			// Set timeout to be a timer which will invoke callback after 300ms (not for small screen)
+			if (!Helpers.isSmallScreen()) {
+				timeout = setTimeout(callback, 300);
+			} else {
+				timeout = setTimeout(callback, 0);
+			}
+		};
+
+		elem.onmouseleave = function () {
+			// Clear any timers set to timeout
+			document.querySelector(".layout-menu-toggle").classList.remove("d-block");
+			clearTimeout(timeout);
+		};
+	};
+	if (document.getElementById("layout-menu")) {
+		delay(document.getElementById("layout-menu"), function () {
+			// not for small screen
+			if (!Helpers.isSmallScreen()) {
+				document.querySelector(".layout-menu-toggle").classList.add("d-block");
+			}
+		});
+	}
+
+	// Display in main menu when menu scrolls
+	let menuInnerContainer = document.getElementsByClassName("menu-inner"),
+		menuInnerShadow = document.getElementsByClassName("menu-inner-shadow")[0];
+	if (menuInnerContainer.length > 0 && menuInnerShadow) {
+		menuInnerContainer[0].addEventListener("ps-scroll-y", function () {
+			if (this.querySelector(".ps__thumb-y").offsetTop) {
+				menuInnerShadow.style.display = "block";
+			} else {
+				menuInnerShadow.style.display = "none";
+			}
+		});
+	}
+
+	// Init helpers & misc
+	// --------------------
+
+	// Init BS Tooltip
+	const tooltipTriggerList = [].slice.call(
+		document.querySelectorAll('[data-bs-toggle="tooltip"]')
+	);
+	tooltipTriggerList.map(function (tooltipTriggerEl) {
+		return new bootstrap.Tooltip(tooltipTriggerEl);
+	});
+
+	// Accordion active class
+	const accordionActiveFunction = function (e) {
+		if (e.type == "show.bs.collapse" || e.type == "show.bs.collapse") {
+			e.target.closest(".accordion-item").classList.add("active");
+		} else {
+			e.target.closest(".accordion-item").classList.remove("active");
+		}
+	};
+
+	const accordionTriggerList = [].slice.call(
+		document.querySelectorAll(".accordion")
+	);
+	const accordionList = accordionTriggerList.map(function (accordionTriggerEl) {
+		accordionTriggerEl.addEventListener(
+			"show.bs.collapse",
+			accordionActiveFunction
+		);
+		accordionTriggerEl.addEventListener(
+			"hide.bs.collapse",
+			accordionActiveFunction
+		);
+	});
+
+	// Auto update layout based on screen size
+	window.Helpers.setAutoUpdate(true);
+
+	// Toggle Password Visibility
+	window.Helpers.initPasswordToggle();
+
+	// Speech To Text
+	window.Helpers.initSpeechToText();
+
+	// Manage menu expanded/collapsed with templateCustomizer & local storage
+	//------------------------------------------------------------------
+
+	// If current layout is horizontal OR current window screen is small (overlay menu) than return from here
+	if (window.Helpers.isSmallScreen()) {
+		return;
+	}
+
+	// If current layout is vertical and current window screen is > small
+
+	// Auto update menu collapsed/expanded based on the themeConfig
+	window.Helpers.setCollapsed(true, false);
+})();
+
+// sidebar Layout close and open functions
+
+let aside = document.querySelector("#layout-menu");
+let layoutPage = document.querySelector(".layout-page");
+let menuBar = document.querySelector(".menu-bar");
+let menuList = document.getElementsByClassName("menu-list");
+let appIcon = document.querySelector(".app-brand");
+
+window.onload = function () {
+	if (window.innerWidth < 1200) {
+		menuBar.style.display = "none";
+	}
+};
+window.addEventListener("resize", function () {
+	if (window.innerWidth > 1200) {
+		let sideBar = true;
+		menuBar.style.display = "block";
+		menuBar.addEventListener("click", function () {
+			if (sideBar) {
+				aside.style.width = "4%";
+				layoutPage.style.paddingLeft = "5rem";
+				appIcon.style.paddingLeft = '0.2rem'
+				appIcon.style.paddingRight = '0.2rem'
+				console.log(sideBar);
+				for (let i = 0; i < menuList.length; i++) {
+					menuList[i].style.display = "none";
+				}
+				return (sideBar = false);
+			}
+			console.log(sideBar);
+
+			if (!sideBar) {
+				aside.style.width = "16.25rem";
+				layoutPage.style.paddingLeft = "16.25rem";
+				appIcon.style.paddingLeft = '2rem'
+				appIcon.style.paddingRight = '2rem'
+				console.log(sideBar);
+				for (let i = 0; i < menuList.length; i++) {
+					menuList[i].style.display = "block";
+				}
+				return (sideBar = true);
+			}
+		});
+	}
+	if (window.innerWidth < 1200) {
+		menuBar.style.display = "none";
+		aside.style.width = "16.25rem";
+		layoutPage.style.paddingLeft = "0";
+		appIcon.style.paddingLeft = '2rem'
+				appIcon.style.paddingRight = '2rem'
+		for (let i = 0; i < menuList.length; i++) {
+			menuList[i].style.display = "block";
+		}
+	}
+});
+>>>>>>> 995c8c5ede980865763b6e4317173c722d08648e
