@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function ($) {
   ("use strict");
   /*=================================
@@ -843,7 +842,6 @@ function closeLightBox() {
     }
 }
 lightBoxContainer.addEventListener("click", closeLightBox);
-=======
 /**
  * Main
  */
@@ -1028,4 +1026,3 @@ window.addEventListener("resize", function () {
 		}
 	}
 });
->>>>>>> 995c8c5ede980865763b6e4317173c722d08648e

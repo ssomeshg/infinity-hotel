@@ -8355,7 +8355,7 @@ table.variations .reset_variations {
 .contact-layout1 .contact-left .team-media {
   padding: 35px 30px;
   border: 1px solid var(--border-color);
-  border-top: none;
+  /* border-top: none; */
 }
 .contact-layout1 .contact-left .team-media .media-style1 {
   padding: 25px 0px 20px;
