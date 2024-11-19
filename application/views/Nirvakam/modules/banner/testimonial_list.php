@@ -2,8 +2,8 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card">
             <div class="d-flex justify-content-between align-items-center">
-                <h5 class="card-header">Blog List</h5>
-                <a href="<?= base_url() . 'blog_create' ?>" class="btn btn-primary d-block m-3">
+                <h5 class="card-header">Testimonial List</h5>
+                <a href="<?= base_url() . 'testimonial_create' ?>" class="btn btn-primary d-block m-3">
                     <i class='bx bx-list-ul'></i> Add</a></a>
             </div>
             <div class="card-body">
@@ -13,6 +13,7 @@
                             <tr class="table-dark">
                                 <th class="text-white">S.No</th>
                                 <th class="text-white">Title</th>
+                                <th class="text-white">Heading</th>
                                 <th class="text-white">Content</th>
                                 <th class="text-white">Image</th>
                                 <th class="text-white">Action</th>
@@ -20,18 +21,18 @@
                         </thead>
                         <tbody>
                             <?php $i = 1;
-                            foreach ($blog as $row): ?>
+                            foreach ($testimonial as $row): ?>
                                 <tr>
                                     <td><?php echo $i++; ?></td>
                                     <td class=""><?php echo $row->title; ?></td>
-                                    <td class=""><?php echo $row->description; ?></td>
+                                    <td class=""><?php echo $row->heading; ?></td>
+                                    <td class=""><?php echo $row->content; ?></td>
                                     <td><?php if ($row->image != ''): ?>
-                                            <img src="<?php echo base_url('uploads/blog/' . $row->image); ?>" alt="before_after" style="width:100%; height:100px;">
-                                        <?php endif; ?>
-                                    </td>
+                                        <img src="<?php echo base_url('uploads/testimonial/' . $row->image); ?>" alt="banner" style="width:100%; height:100px;">
+                                    <?php endif; ?></td>
                                     <td>
-                                        <a href="<?php echo base_url() . 'Blog/blog_edit/' . $row->id ?>" class="btn btn-icon btn-outline-primary"><span class="tf-icons bx bx-edit-alt"></span></a> |
-                                        <a href="<?php echo base_url() . 'Blog/blog_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
+                                        <a href="<?php echo base_url() . 'Banner/testimonial_edit/' . $row->id ?>" class="btn btn-icon btn-outline-primary"><span class="tf-icons bx bx-edit-alt"></span></a> |
+                                        <a href="<?php echo base_url() . 'Banner/testimonial_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

@@ -23,15 +23,15 @@
                             foreach ($gallery as $row): ?>
                                 <tr>
                                     <td><?php echo $i++; ?></td>
-                                    <td class="package-content"><?php echo $row->title; ?></td>
-                                    <td class="package-content"><?php echo $row->description; ?></td>
+                                    <td><?php echo $row->title; ?></td>
+                                    <td><?php echo $row->description; ?></td>
                                     <td><?php if ($row->image != ''): ?>
                                             <img src="<?php echo base_url('uploads/gallery/' . $row->image); ?>" alt="before_after" style="width:100%; height:100px;">
                                         <?php endif; ?>
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url() . 'Blog/blog_edit/' . $row->id ?>" class="btn btn-icon btn-outline-primary"><span class="tf-icons bx bx-edit-alt"></span></a> |
-                                        <a href="<?php echo base_url() . 'Blog/blog_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
+                                        <a href="<?php echo base_url() . 'Blog/gallery_edit/' . $row->id ?>" class="btn btn-icon btn-outline-primary"><span class="tf-icons bx bx-edit-alt"></span></a> |
+                                        <a href="<?php echo base_url() . 'Blog/gallery_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

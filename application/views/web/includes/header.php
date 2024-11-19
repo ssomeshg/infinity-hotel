@@ -47,6 +47,12 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/web/css/slick.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/web/css/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </head>
 <style>

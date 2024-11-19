@@ -20,18 +20,30 @@
                             </div>
                         <?php endif; ?>
                         <form action="<?= base_url() . 'gallery_save' ?>" method="post" enctype="multipart/form-data" onSubmit="return validate();" autocomplete="off">
-                            <input type="hidden" name="id" id="id" value="<?php echo isset($blog->id) ? $blog->id : ''; ?>" />
+                            <input type="hidden" name="id" id="id" value="<?php echo isset($gallery->id) ? $gallery->id : ''; ?>" />
                             <div class="row">
+                                <div class="col-md-12 fv-plugins-icon-container">
+                                    <label class="form-label" for="formValidationName">Select Package</label>
+                                    <select class="form-select" name="gallery_category_id" id="exampleFormControlSelect1" aria-label="Default select example">
+                                        <option selected="">Select Category</option>
+                                        <?php $i = 1;
+                                        foreach ($gallery_category as $row):
+                                        ?>
+                                            <option value="<?php echo $row->id ?>"><?php echo $row->category_name ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                                </div>
 
                                 <div class="col-md-12">
                                     <label class="col-sm- col-form-label" for="category_name">Title</label>
-                                    <input type="text" class="form-control" name="title" id="username" placeholder="Enter Title" value="<?php echo isset($blog->title) ? $blog->title : ''; ?>" />
+                                    <input type="text" class="form-control" name="title" id="username" placeholder="Enter Title" value="<?php echo isset($gallery->title) ? $gallery->title : ''; ?>" />
                                     <div> <span id="username_error" style="color:red"></span></div>
                                 </div>
 
                                 <div class="col-12">
                                     <label class="form-label" for="bootstrap-maxlength-example2">Description</label>
-                                    <textarea id="file-picker" name="description" class="form-control bootstrap-maxlength-example" rows="5"><?php echo isset($blog->description) ? $blog->description : ''; ?></textarea>
+                                    <textarea id="file-picker" name="description" class="form-control bootstrap-maxlength-example" rows="5"><?php echo isset($gallery->description) ? $gallery->description : ''; ?></textarea>
                                 </div>
 
                                 <div class="col-sm-12">
@@ -95,9 +107,9 @@
 </script>
 <script src="https://cdn.tiny.cloud/1/xlfeurntq9y7i4xekogr2t4bmyapgkvf5omt3qefzg3qda4b/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
-  tinymce.init({
-    selector: 'textarea',
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-  });
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    });
 </script>

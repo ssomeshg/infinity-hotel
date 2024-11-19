@@ -37,7 +37,7 @@
                             <tr>
                                 <td><span class="fw-medium"><?php echo $i++; ?></span></td>
                                 <td><?php echo $row->package_heading; ?></td>
-                                <td class="package-content"><?php echo substr($row->package_content, 0, 150) . '...'; ?></td>
+                                <td class=""><?php echo substr($row->package_content, 0, 150) . '...'; ?></td>
                                 <td style="width:25%;">
                                     <?php if ($row->image != ''): ?>
                                         <img src="<?php echo base_url('uploads/package/' . $row->image); ?>" alt="package_andaman" class="gallery">
@@ -65,8 +65,9 @@
     </div>
     <!-- / Content -->
 </div>
-<link rel="stylesheet" href="//cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
-<script src="//cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="//cdn.datatables.net/2.1.7/css/dataTables.dataTables.min.css">
+<script src="//cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
 <script>
     let table = new DataTable('#myTable');
 </script>

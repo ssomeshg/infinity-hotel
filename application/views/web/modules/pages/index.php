@@ -299,93 +299,25 @@
                <h2 class="sec-title">Our Blogs</h2>
            </div>
            <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-autoplay="true" data-arrows="true">
+           <?php foreach ($blog as $row): ?>
                <div class="col-lg-4">
                    <div class="vs-blog blog-single">
                        <div class="blog-img">
-                           <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
+                           <a href="<?= base_url('blog-view/' . $row->id) ?>"><img src="<?php echo base_url('uploads/blog/' . $row->image); ?>" alt="Blog Image"></a>
                        </div>
                        <div class="blog-content">
                            <div class="blog-meta">
-                               <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
+                               <a href="<?= base_url('blog-view/' . $row->id) ?>"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
                            </div>
-                           <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
-                           <div class="blog-inner-author">
-                               <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
-                               <div class="text">
-                                   by <a href="#">Jakki James</a>
-                                   <a href="#" class="blog-date">Dec 13, 2024</a>
-                               </div>
-                           </div>
+                           <h2 class="blog-title"><a href="<?= base_url('blog-view/' . $row->id) ?>"><?= $row->title; ?></a></h2>
                        </div>
 
                    </div>
                </div>
-               <div class="col-lg-4">
-                   <div class="vs-blog blog-single">
-                       <div class="blog-img">
-                           <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
-                       </div>
-                       <div class="blog-content">
-                           <div class="blog-meta">
-                               <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
-                           </div>
-                           <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
-                           <div class="blog-inner-author">
-                               <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
-                               <div class="text">
-                                   by <a href="#">Jakki James</a>
-                                   <a href="#" class="blog-date">Dec 13, 2024</a>
-                               </div>
-                           </div>
-                       </div>
-
-                   </div>
-               </div>
-               <div class="col-lg-4">
-                   <div class="vs-blog blog-single">
-                       <div class="blog-img">
-                           <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
-                       </div>
-                       <div class="blog-content">
-                           <div class="blog-meta">
-                               <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
-                           </div>
-                           <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
-                           <div class="blog-inner-author">
-                               <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
-                               <div class="text">
-                                   by <a href="#">Jakki James</a>
-                                   <a href="#" class="blog-date">Dec 13, 2024</a>
-                               </div>
-                           </div>
-                       </div>
-
-                   </div>
-               </div>
-               <div class="col-lg-4">
-                   <div class="vs-blog blog-single">
-                       <div class="blog-img">
-                           <a href="#"><img src="<?php echo base_url() ?>assets/web/img/blog/blog-img-1-1.jpg" alt="Blog Image"></a>
-                       </div>
-                       <div class="blog-content">
-                           <div class="blog-meta">
-                               <a href="#"><i class="fal fa-tag"></i>Andaman Travel Tips</a>
-                           </div>
-                           <h2 class="blog-title"><a href="#">Explore Andaman: A Guide to Your Dream Island Getaway</a></h2>
-                           <div class="blog-inner-author">
-                               <img src="<?php echo base_url() ?>assets/web/img/blog/blog-auth-1-1.png" alt="blog author">
-                               <div class="text">
-                                   by <a href="#">Jakki James</a>
-                                   <a href="#" class="blog-date">Dec 13, 2024</a>
-                               </div>
-                           </div>
-                       </div>
-
-                   </div>
-               </div>
+               <?php endforeach; ?>
            </div>
            <div class="blog-btn">
-               <a href="#" class="vs-btn">View All Blogs</a>
+               <a href="<?= base_url() . 'blog' ?>" class="vs-btn">View All Blogs</a>
            </div>
        </div>
    </section>
@@ -401,11 +333,10 @@
            <div class="row justify-content-center ">
                <div class="col-lg-10">
                    <div class="vs-carousel" data-arrows="false" data-center-mode="left" data-dots="true" data-autoplay="true" data-slide-show="1">
+                   <?php foreach ($testimonial as $row): ?>
                        <div class="testi-style2">
                            <p class="testi-text">
-                               Lorem ipsum dolor sit amet, consec adipiscing elit, sed do eiusmod tempor
-                               incididunt ut labore et dolore magna aliq ua. Ut enim ad minim venia quis nostrud
-                               exercitation ullam mpor incididunt co laboris.
+                           <?= $row->content; ?>
                            </p>
                            <div class="auther-inner">
                                <div class="auther-img">
@@ -413,8 +344,8 @@
                                    <div class="testi-icon"><i class="far fa-quote-left"></i></div>
                                </div>
                                <div class="auther-content">
-                                   <h3 class="name h5">Thomas Willimes</h3>
-                                   <span class="designation">Island Adventure Specialist</span>
+                                   <h3 class="name h5"><?= $row->title; ?></h3>
+                                   <span class="designation"><?= $row->heading; ?></span>
 
                                    <div class="rating">
                                        <i class="fas fa-star"></i>
@@ -426,40 +357,14 @@
                                </div>
                            </div>
                        </div>
-                       <div class="testi-style2">
-                           <p class="testi-text">
-                               Lorem ipsum dolor sit amet, consec adipiscing elit, sed do eiusmod tempor
-                               incididunt ut labore et dolore magna aliq ua. Ut enim ad minim venia quis nostrud
-                               exercitation ullam mpor incididunt co laboris.
-                           </p>
-                           <div class="auther-inner">
-                               <div class="auther-img">
-                                   <img src="<?php echo base_url() ?>assets/web/img/testimonial/testi-img-1-1.png" alt="testimonial">
-                                   <div class="testi-icon"><i class="far fa-quote-left"></i></div>
-                               </div>
-                               <div class="auther-content">
-                                   <h3 class="name h5">Thomas Willimes</h3>
-                                   <span class="designation">Andaman Tour Guide</span>
-
-                                   <div class="rating">
-                                       <i class="fas fa-star"></i>
-                                       <i class="fas fa-star"></i>
-                                       <i class="fas fa-star"></i>
-                                       <i class="fas fa-star"></i>
-                                       <i class="fas fa-star"></i>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-
+                       <?php endforeach; ?>
                    </div>
                </div>
            </div>
        </div>
    </section>
 
-   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
    <script>
        document.getElementById("enqury_form").addEventListener("submit", function(e) {
            e.preventDefault();

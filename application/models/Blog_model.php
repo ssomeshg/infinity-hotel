@@ -42,31 +42,22 @@ class Blog_model extends CI_Model
         return $this->db->get('tbl_banner')->result();
     }
 
+    public function gettestimonial($id = NULL) {
+		
+        $this->db->where('status', 1);
+        if ($id) {
+            $this->db->where('id', $id);
+            return $this->db->get('tbl_testimonial')->row();
+        }
+        $this->db->order_by('id', 'desc');
+        return $this->db->get('tbl_testimonial')->result();
+    }
 
-    // public function get_blog_by_slug($slug = NULL) {
-    //     $this->db->where('status', 0);
-    
-    //     // If a slug is provided, try to match the blog by title
-    //     if ($slug) {
-    //         $this->db->like('title', str_replace('-', ' ', $slug)); // Match slug with title
-    //         return $this->db->get('tbl_blog')->row();
-    //     }
-        
-    //     $this->db->order_by('id', 'desc');
-    //     return $this->db->get('tbl_blog')->result();
-    // }
-    
-    
-    // public function generate_slug($title, $id) {
-    //     // Create a URL-friendly slug, limiting it to 20 characters
-    //     $slug = url_title(substr($title, 0, 20), 'dash', TRUE);
-    
-    //     // Update the slug in the database if not already set
-    //     $this->db->where('id', $id);
-    //     $this->db->update('tbl_blog', ['slug' => $slug]);
-    
-    //     return $slug;
-    // }
+    public function edit_gallery_category($id)
+    {
+        $query = $this->db->get_where('tbl_gallery_category', array('id' => $id));
+        return $query->row();
+    }
     
 
 }

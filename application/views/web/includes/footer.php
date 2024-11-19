@@ -97,6 +97,19 @@
             </div>
         </div>
     </footer> 
+    <style>
+   
+  .whatsapp_btn:hover{
+   transform: translateY(-10px);
+   transition-duration: 0.1s;
+    transition-timing-function: linear;
+  }
+</style>
+ <!-- Whatsapp  -->
+ <div class="whatsapp_btn" style="position: fixed; bottom: 0; left: 0; padding: 10px;  z-index: 11111; ">
+        <a href="https://wa.me/917695061322" target="_blank"><img src="<?php echo base_url() ?>assets/web/img/whatsapp.webp" alt="Infinity Hotel"
+                style="width: 80px;"></a>
+    </div>
     <!-- Scroll To Top -->
     <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
 

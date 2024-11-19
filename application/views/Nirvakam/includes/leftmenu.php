@@ -174,6 +174,11 @@
               <div data-i18n="Authentications">Gallery</div>
             </a>
             <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="<?= base_url() . 'gallery_category' ?>" class="menu-link text-white">
+                  <div>Category</div>
+                </a>
+              </li>
               <li class="menu-item">
                 <a href="<?= base_url() . 'gallery_create' ?>" class="menu-link text-white">
                   <div>create</div>
@@ -187,9 +192,9 @@
             </ul>
           </li>
             <li class="menu-item mt-2">
-            <a href="<?= base_url() . 'enqury_list' ?>" class="menu-link text-white">
+            <a href="<?= base_url() . 'hotel_enqury_list' ?>" class="menu-link text-white">
               <i class="menu-icon tf-icons bx bxs-food-menu"></i>
-              <div>Enqury List</div>
+              <div>Hotel Enqury List</div>
             </a>
           </li>
           <li class="menu-item mt-2">
@@ -198,30 +203,30 @@
               <div>Contact Us Enquery</div>
             </a>
           </li>
-          <!-- <li class="menu-item ">
+          <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-              <i class="menu-icon tf-icons bx bxs-file"></i>
-              <div data-i18n="Authentications">Management</div>
+            <i class="menu-icon tf-icons bx bxs-photo-album"></i>
+              <div data-i18n="Authentications">Testimonial</div>
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="<?= base_url() . 'nirvakam_create' ?>" class="menu-link text-white">
-                  <div>Admin Create</div>
+                <a href="<?= base_url() . 'testimonial_create' ?>" class="menu-link text-white">
+                  <div>create</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="<?= base_url() . 'testimonial_list' ?>" class="menu-link text-white">
+                  <div>List</div>
                 </a>
               </li>
             </ul>
-          </li> -->
-
-          <!-- 
-
+          </li>
           <li class="menu-item mt-2">
-            <a href="<?= base_url() . 'video' ?>" class="menu-link text-white">
-              <i class="menu-icon tf-icons bx bxs-video"></i>
-              <div>Video</div>
+            <a href="<?= base_url() . 'tour_enqury_list' ?>" class="menu-link text-white">
+              <i class="menu-icon tf-icons bx bxs-food-menu"></i>
+              <div>Tour Enqury List</div>
             </a>
           </li>
-
-           -->
         </ul>
         <div class="menu-bar">
             <img src="<?php echo base_url() ?>assets/img/blue-icon.png" alt="menu">

@@ -2,7 +2,7 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card">
             <div class="d-flex justify-content-between align-items-center">
-                <h5 class="card-header">Contact List</h5> 
+                <h5 class="card-header">Appointment List</h5> 
             </div>
             <div class="card-body">
                 <div class="table-responsive text-nowrap">
@@ -10,21 +10,24 @@
                         <thead>
                             <tr class="table-dark">
                                 <th class="text-white">S.No</th>
-                                <th class="text-white">User Name</th> 
+                                <th class="text-white">Vacation Type</th> 
+                                <th class="text-white">Full Name</th>
+                                <th class="text-white">Mobile Number</th>
                                 <th class="text-white">Email</th>
-                                <th class="text-white">Message</th>
                                 <th class="text-white">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i =1; foreach($contact as $row): ?>
+                            <?php $i = 1;
+                            foreach ($tour_enqury as $row): ?>
                                 <tr>
-                                    <td><?=  $i++; ?></td>
-                                    <td><?=  $row->name; ?></td>
-                                    <td><?= $row->email; ?></td>
-                                    <td><?=  $row->message; ?></td>
+                                    <td><?php echo $i++; ?></td>
+                                    <td><?php echo $row->vacation_type; ?></td>
+                                    <td><?php echo $row->fullname; ?></td>
+                                    <td><?php echo $row->mobile_no; ?></td>
+                                    <td><?php echo $row->email; ?></td>
                                     <td>
-									<a href="<?php echo base_url() . 'Web/contact_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
+									<a href="<?php echo base_url() . 'Web/tour_enqury_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
 									</td>
                                 </tr>
                                 <?php endforeach; ?>

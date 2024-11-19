@@ -26,7 +26,7 @@ class Dashboard extends CI_Controller {
         $this->load->view($this->data['theme'] . '/template');
     }
 
-    public function enqury_list() {
+    public function hotel_enqury_list() {
 		$this->data['enqury'] = $this->Common->get_records("tbl_enqury","*",array('status' => 1));
         $this->data['page'] = 'enqury_list';
         $this->load->vars($this->data);
@@ -34,8 +34,15 @@ class Dashboard extends CI_Controller {
     }
 
     public function contact_list(){
-        $this->data['contact'] = $this->Common->get_records("tbl_contact","*",array('status' => 0));
+        $this->data['contact'] = $this->Common->get_records("tbl_contact","*",array('status' =>1));
         $this->data['page'] = 'contact_list';
+        $this->load->vars($this->data);
+        $this->load->view($this->data['theme'] . '/template');
+    }
+
+    public function tour_enqury_list() {
+		$this->data['tour_enqury'] = $this->Common->get_records("tbl_tour_enqury","*",array('status' => 1));
+        $this->data['page'] = 'tour_enqury_list';
         $this->load->vars($this->data);
         $this->load->view($this->data['theme'] . '/template');
     }

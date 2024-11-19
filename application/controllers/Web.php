@@ -23,6 +23,8 @@ class Web extends CI_Controller
 
 	public function index()
 	{
+		$this->data['blog'] = $this->Common->get_records("tbl_blog","*",array('status' => 1));
+		$this->data['testimonial'] = $this->Common->get_records("tbl_testimonial","*",array('status' => 1));
 		$this->data['packages'] = $this->Web->package_list();
 		$this->data['pack'] = $this->package->get_packages();
 		$this->data['type'] = $this->package->create_list();
@@ -69,8 +71,14 @@ class Web extends CI_Controller
 		$this->load->view($this->data['theme'] . '/template');
 	}
 	
-	public function gallery()
+	public function gallery($category_id = null)
 	{
+		$this->data['gallery_category'] = $this->Common->get_records("tbl_gallery_category","*",array('status' => 1));
+		if ($category_id) {
+			$this->data['gallery'] = $this->Common->get_records("tbl_gallery", "*", array('status' => 1, 'gallery_category_id' => $category_id));
+		} else {
+			$this->data['gallery'] = [];
+		}
         $this->data['packages'] = $this->Web->package_list();
 		$this->data['pack'] = $this->package->get_packages();
 		$this->data['type'] = $this->package->create_list();
@@ -79,8 +87,25 @@ class Web extends CI_Controller
 		$this->load->view($this->data['theme'] . '/template');
 	}
 
+	public function fetch_images()
+    {
+    $input = json_decode(file_get_contents('php://input'), true);
+    $gallery_id = $input['gallery_id'];
+
+    $images = $this->Common->get_records('tbl_gallery', '*', ['gallery_category_id' => $gallery_id, 'status' => 1]);
+
+    if ($images) {
+        $category = $this->Common->get_record('tbl_gallery_category', 'category_name', ['id' => $gallery_id]);
+        echo json_encode(['success' => true, 'images' => $images, 'category_name' => $category->category_name]);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'No images found.']);
+    }
+    }
+
+
 	public function blog()
 	{
+		$this->data['blog'] = $this->Common->get_records("tbl_blog","*",array('status' => 1));
 		$this->data['packages'] = $this->Web->package_list();
 		$this->data['pack'] = $this->package->get_packages();
 		$this->data['type'] = $this->package->create_list();
@@ -89,8 +114,15 @@ class Web extends CI_Controller
 		$this->load->view($this->data['theme'] . '/template');
 	}
 
-	public function blog_view()
+	public function blog_view($id)
 	{
+		$this->data['blog'] = $this->blog->getblog($id);
+
+		$this->data['meta'] = [
+			'meta_tag' => $this->data['blog']->meta_tag,
+			'meta_description' => $this->data['blog']->meta_description,
+			'meta_title' => $this->data['blog']->meta_title
+		];
         $this->data['packages'] = $this->Web->package_list();
 		$this->data['pack'] = $this->package->get_packages();
 		$this->data['type'] = $this->package->create_list();
@@ -202,7 +234,7 @@ class Web extends CI_Controller
 		}
 	}
 
-	public function appointment_delete($id)
+	public function enqury_delete($id)
 	{
 
 		$where['id'] = $id;
@@ -218,13 +250,11 @@ class Web extends CI_Controller
 		$this->form_validation->set_error_delimiters('', '');
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('phone_number', 'Phone Number', 'required|regex_match[/^[0-9]{10}$/]', ['regex_match' => 'Phone Number must be 10 digits.']);
 
 		if ($this->form_validation->run() == FALSE) {
 			$errors = [
 				'name' => form_error('name'),
-				'email' => form_error('email'),
-				'phone_number' => form_error('phone_number')
+				'email' => form_error('email')
 			];
 			echo json_encode(['status' => 'error', 'errors' => $errors]);
 		} else {
@@ -240,8 +270,6 @@ class Web extends CI_Controller
 				$values = [
 					'name' => $this->input->post('name'),
 					'email' => $this->input->post('email'),
-					'phone_number' => $this->input->post('phone_number'),
-					'subject' => $this->input->post('subject'),
 					'message' => $this->input->post('message')
 				];
 
@@ -266,5 +294,57 @@ class Web extends CI_Controller
 		$this->Common->update('tbl_contact', $values, $where);
 		$this->session->set_flashdata('success', 'Contact deleted successfully');
 		redirect('contact_list');
+	}
+
+	public function tour_enqury_save()
+	{
+		$this->form_validation->set_error_delimiters('', '');
+		$this->form_validation->set_rules('fullname', 'fullname', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$errors = [
+				'fullname' => form_error('fullname')
+			];
+			echo json_encode(['status' => 'error', 'errors' => $errors]);
+		} else {
+			$recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+			$userIp = $this->input->ip_address();
+			$secret = '6LdSQz4qAAAAAK8lHo9oi4JdtSBGSE58sr7wB6jN';
+			$url = 'https://www.google.com/recaptcha/api/siteverify';
+
+			$response = file_get_contents($url . '?secret=' . $secret . '&response=' . $recaptchaResponse . '&remoteip=' . $userIp);
+			$status = json_decode($response, true);
+
+			if ($status['success']) {
+				$values = [
+					'fullname' => $this->input->post('fullname'),
+					'mobile_no' => $this->input->post('mobile_no'),
+					'email' => $this->input->post('email'),
+					'adult' => $this->input->post('adult'),
+					'below_child' => $this->input->post('below_child'),
+					'date' => $this->input->post('date'),
+					'vacation_type' => $this->input->post('vacation_type'),
+				];
+
+				$insert_id = $this->Common->insert('tbl_tour_enqury', $values);
+				if ($insert_id) {
+					echo json_encode(['status' => 'success', 'message' => 'Your Tour Enquery has been successfully saved!']);
+				} else {
+					echo json_encode(['status' => 'error', 'message' => 'Failed to add Tour Enquery.']);
+				}
+			} else {
+				echo json_encode(['status' => 'error', 'message' => 'reCAPTCHA verification failed. Please try again.']);
+			}
+		}
+	}
+
+	public function tour_enqury_delete($id)
+	{
+
+		$where['id'] = $id;
+		$values['status'] = 0;
+		$this->Common->update('tbl_tour_enqury', $values, $where);
+		$this->session->set_flashdata('success', 'Enqury deleted successfully');
+		redirect('tour_enqury_list');
 	}
 }

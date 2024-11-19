@@ -27,7 +27,7 @@
                                     <td><?php echo $row->check_in; ?></td>
                                     <td><?php echo $row->check_out; ?></td>
                                     <td>
-									<a href="<?php echo base_url() . 'Web/appointment_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
+									<a href="<?php echo base_url() . 'Web/enqury_delete/' . $row->id ?>" class="btn btn-icon btn-outline-danger"><span class="tf-icons bx bx-trash"></span></a>
 									</td>
                                 </tr>
                                 <?php endforeach; ?>

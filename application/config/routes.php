@@ -59,13 +59,14 @@ $route['package-view'] = 'Web/package_view';
 $route['about-us'] = 'Web/about_us';
 $route['rooms-tariff'] = 'Web/rooms_tariff';
 $route['blog'] = 'Web/blog';
-$route['blog-view'] = 'Web/blog_view';
+$route['blog-view/(:num)'] = 'Web/blog_view/$1';
 $route['gallery'] = 'Web/gallery';
 $route['contact'] = 'Web/contact';
 $route['package/(:any)'] = 'web/package_list/$1';
 //$route['packages/(:any)/(:any)'] = 'web/package_type/$1/$2';
 $route['explore/(:num)'] = 'web/explore/$1';
 
+$route['tour_enqury_save'] = 'Web/tour_enqury_save';
 $route['enqury_save'] = 'Web/enqury_save';
 $route['contact_save'] = 'Web/contact_save';
 
@@ -96,8 +97,9 @@ $route['package_list'] = 'Package/package_list';
 $route['package_active_save'] = 'Package/package_active_save';
 $route['package_plan_update'] = 'Package/package_plan_update';
 
-$route['enqury_list'] = 'Dashboard/enqury_list';
+$route['hotel_enqury_list'] = 'Dashboard/hotel_enqury_list';
 $route['contact_list'] = 'Dashboard/contact_list';
+$route['tour_enqury_list'] = 'Dashboard/tour_enqury_list';
 
 $route['blog_create'] = 'Blog';
 $route['blog_list'] = 'Blog/blog_list';
@@ -111,5 +113,9 @@ $route['banner_create'] = 'Banner';
 $route['banner_list'] = 'Banner/banner_list';
 $route['banner_save'] = 'Banner/banner_save';
 
-$route['video'] = 'Banner/video';
-$route['video_save'] = 'Banner/video_save';
+$route['testimonial_create'] = 'Banner/testimonial_create';
+$route['testimonial_list'] = 'Banner/testimonial_list';
+$route['testimonial_save'] = 'Banner/testimonial_save';
+
+$route['gallery_category'] = 'Banner/gallery_category';
+$route['gallery_category_save'] = 'Banner/gallery_category_save';

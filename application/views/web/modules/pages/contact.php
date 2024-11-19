@@ -34,21 +34,24 @@
                             <div class="form-title">
                                 <p class="media-title">Please fill out the form below and one of our recruitment specialists will back in touch shortly.</p>
                             </div>
-                            <form action="https://html.vecurosoft.com/farmix/demo/mail.php" method="post" class="form-style3 ajax-contact">
+                            <form id="contactForm" class="form-style3 ajax-contact">
                                 <div class="row">
                                     <div class="col-12  form-group">
                                         <textarea name="message" class="form-control" placeholder="Message" required=""></textarea>
                                       </div>
                                     <div class="col-md-6 form-group">
-                                    <input name="fname" type="text" class="form-control" placeholder="Name" required="">
+                                    <input name="name" type="text" class="form-control" placeholder="Name" required="">
+                                    <span class="error text-danger" id="name_error"></span>
                                   </div>
                                   <div class="col-6 form-group">
                                     <input name="email" type="email" class="form-control" placeholder="Email Address" required="">
+                                    <span class="error text-danger" id="email_error"></span>
                                   </div>
                                   <div class="col-12 ">
                                     <div class="custom-checkbox notice">
                                         <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
                                         <label for="wp-comment-cookies-consent"> Save my name, email, and website in this browser for the next time I comment.</label>
+                                        <div class="g-recaptcha" data-sitekey="6LdSQz4qAAAAAAeyDrY6zgvpC9bUsDU0DbP718bQ"></div>
                                     </div>
                                 </div>
                                   <div class="col-12 form-group">
@@ -58,7 +61,7 @@
                                   </div>
                                 </div>
                             </form>
-                            <p class="form-messages mb-0 mt-3"></p>
+                            <!-- <p class="form-messages mb-0 mt-3"></p> -->
                         </div>
                     </div>
                 </div>
@@ -97,3 +100,60 @@
             </div>
         </div>
     </section>
+    <script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let formData = new FormData(this);
+
+    document.querySelectorAll('.error').forEach((span) => {
+      span.innerText = '';
+    });
+
+    fetch('Web/contact_save', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          Swal.fire({
+            title: "Success",
+            text: data.message,
+            icon: "success",
+            confirmButtonText: "Okay",
+            allowOutsideClick: false
+          }).then(() => {
+            location.reload();
+          });
+        } else {
+          if (data.errors) {
+            if (data.errors.name) {
+              document.getElementById('name_error').innerText = data.errors.name;
+            }
+            if (data.errors.email) {
+              document.getElementById('email_error').innerText = data.errors.email;
+            }
+            if (data.errors.phone_number) {
+              document.getElementById('phone_number_error').innerText = data.errors.phone_number;
+            }
+          } else {
+            Swal.fire({
+              title: "Error",
+              text: data.message,
+              icon: "error",
+              confirmButtonText: "Okay"
+            });
+          }
+        }
+      })
+      .catch(error => {
+        Swal.fire({
+          title: "Error",
+          text: "Something went wrong!",
+          icon: "error",
+          confirmButtonText: "Okay"
+        });
+      });
+  });
+</script>

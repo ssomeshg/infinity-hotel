@@ -93,7 +93,7 @@ class Blog extends CI_Controller {
 	}
 
     public function gallery() {
-		
+        $this->data['gallery_category'] = $this->Common->get_records("tbl_gallery_category","*",array('status' => 1));
         $this->data['page'] = 'gallery_create';
         $this->load->vars($this->data);
         $this->load->view($this->data['theme'] . '/template');
@@ -109,11 +109,12 @@ class Blog extends CI_Controller {
     public function gallery_save() {
 		
         $id = $where['id'] = $this->input->post('id');
+        $values['gallery_category_id'] = $this->input->post('gallery_category_id');
         $values['title'] = $this->input->post('title');
         $values['description'] = $this->input->post('description');
 
         if (isset($_FILES['image']['name']) && !empty($_FILES['image']['name'])) {
-            $config['upload_path'] = 'uploads/blog';
+            $config['upload_path'] = 'uploads/gallery';
             $config['allowed_types'] = 'jpg|png|jpeg|webp';
             $config['file_name'] = rand() . time();
 
@@ -132,7 +133,7 @@ class Blog extends CI_Controller {
 			$insert_id = $this->Common->update('tbl_gallery',$values,$where);
 			$this->session->set_flashdata('success', 'Gallery updated successfully.');
 		}else{
-			$insert_id = $this->Common->insert('tbl_blog',$values);
+			$insert_id = $this->Common->insert('tbl_gallery',$values);
 			$this->session->set_flashdata('success', 'Gallery added successfully.');
 		}
 		
@@ -146,7 +147,7 @@ class Blog extends CI_Controller {
 		if ($id) {
             $this->data['gallery'] = $this->blog->getgallery($id);
         }
-		
+		$this->data['gallery_category'] = $this->Common->get_records("tbl_gallery_category","*",array('status' => 1));
         $this->data['page'] = 'gallery_create';
         $this->load->vars($this->data);
         $this->load->view($this->data['theme'] . '/template');

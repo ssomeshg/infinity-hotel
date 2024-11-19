@@ -4762,6 +4762,20 @@ blockquote.vs-quote p {
   border-radius: 5px;
   font-size: 14px;
 }
+.service-style1 .link-btn button {
+  color: #000;
+  background-color: darkseagreen;
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.service-style1 .link-btn button:hover {
+  color: #000;
+  background-color: darkseagreen;
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 14px;
+}
 .service-style1 .service-img2 {
   position: absolute;
   width: 100%;

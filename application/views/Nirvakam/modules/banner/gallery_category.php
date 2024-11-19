@@ -7,18 +7,18 @@
                         <h5 class="card-header">Video Details </h5>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url() . 'video_save' ?>" method="post" enctype="multipart/form-data" onSubmit="return validate();" autocomplete="off">
+                        <form action="<?= base_url() . 'gallery_category_save' ?>" method="post" enctype="multipart/form-data" onSubmit="return validate();" autocomplete="off">
                             <input type="hidden" name="id" id="id" value="<?php echo isset($video->id) ? $video->id : ''; ?>" />
                             <div class="row">
 
                                 <div class="col-md-6">
-                                    <label class="col-sm- col-form-label" for="category_name">Video Link</label>
-                                    <input type="text" class="form-control" name="video_id" id="video_id" placeholder="Enter Video ID" />
+                                    <label class="col-sm- col-form-label" for="category_name">Category Name</label>
+                                    <input type="text" class="form-control" name="category_name" id="category_name" placeholder="Enter category name" />
                                     <div> <span id="username_error" style="color:red"></span></div>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="col-sm- col-form-label" for="category_name">Video Thumbnail</label>
+                                    <label class="col-sm- col-form-label" for="category_name">Category Image</label>
                                     <input type="file" class="form-control" name="image" id="image" placeholder="Enter Video ID" />
                                     <div> <span id="username_error" style="color:red"></span></div>
                                 </div>
@@ -34,21 +34,21 @@
                                 <thead>
                                     <tr class="table-dark">
                                         <th class="text-white">S.No</th>
-                                        <th class="text-white">Video Link</th>
-                                        <th class="text-white">Video Thumbnail</th>
+                                        <th class="text-white">Category Name</th>
+                                        <th class="text-white">Category Image</th>
                                         <th class="text-white">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1;
-                                    foreach ($video as $row): ?>
+                                    foreach ($gallery_category as $row): ?>
                                         <tr>
                                             <td><?php echo $i++; ?></td>
-                                            <td class="package-content"><?php echo $row->video_id; ?>
-                                                <input type="hidden" class="video_id" value="<?php echo $row->id; ?>">
+                                            <td><?php echo $row->category_name; ?>
+                                                <input type="hidden" class="category_name" value="<?php echo $row->id; ?>">
                                             </td>
                                             <td><?php if ($row->image != ''): ?>
-                                                    <img src="<?php echo base_url('uploads/video/' . $row->image); ?>" alt="banner" style="width:100%; height:100px;">
+                                                    <img src="<?php echo base_url('uploads/gallery/' . $row->image); ?>" alt="banner" style="width:100%; height:100px;">
                                                 <?php endif; ?>
                                             </td>
                                             <td>
@@ -82,7 +82,7 @@
 
         function editvideo(id) {
             $.ajax({
-                url: '<?php echo base_url('Banner/video_edit'); ?>',
+                url: '<?php echo base_url('Banner/gallery_category_edit'); ?>',
                 type: 'POST',
                 dataType: 'json',
                 data: {
@@ -90,7 +90,7 @@
                 },
                 success: function(response) {
                     $('#id').val(response.id);
-                    $('#video_id').val(response.video_id);
+                    $('#category_name').val(response.category_name);
                 },
                 error: function(xhr, status, error) {
                     console.error('AJAX Error: ' + status + ' - ' + error);
