@@ -137,9 +137,8 @@
                     </div>
                     <div class="col-auto">
                         <div class="social-style1">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/people/The-Innfinity-Hotel/61568697334078/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/innfinty_andaman/"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
