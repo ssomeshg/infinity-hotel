@@ -100,7 +100,7 @@
     // Function to fetch category details via AJAX
     function editType(id) {
       $.ajax({
-        url: '<?php echo base_url('package/get_type_details'); ?>',
+        url: '<?= base_url() . 'get_type_details' ?>',
         type: 'POST',
         dataType: 'json',
         data: {

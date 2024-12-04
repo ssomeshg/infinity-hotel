@@ -90,6 +90,7 @@ $route['save_create_package'] = 'Package/save_create_package';
 $route['get_category_details'] = 'Package/get_category_details';
 $route['package_type'] = 'Package/package_type';
 $route['save_type_package'] = 'Package/save_type_package';
+$route['get_type_details'] = 'Package/get_type_details';
 $route['package'] = 'Package';
 $route['package_save'] = 'Package/package_save';
 $route['package_update'] = 'Package/package_update';
