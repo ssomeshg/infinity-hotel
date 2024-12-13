@@ -101,6 +101,7 @@ $route['package_plan_update'] = 'Package/package_plan_update';
 $route['hotel_enqury_list'] = 'Dashboard/hotel_enqury_list';
 $route['contact_list'] = 'Dashboard/contact_list';
 $route['tour_enqury_list'] = 'Dashboard/tour_enqury_list';
+$route['hotel_room_list'] = 'Dashboard/hotel_room_list';
 
 $route['blog_create'] = 'Blog';
 $route['blog_list'] = 'Blog/blog_list';

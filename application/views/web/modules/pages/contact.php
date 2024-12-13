@@ -74,7 +74,7 @@
                                 <div class="media-icon"><img src="<?php echo base_url() ?>assets/web/img/icon/icon-1-1.png" alt="icon"></div>
                                 <div class="media-body">
                                     <h3 class="media-title">Phone No:</h3>
-                                    <p class="media-info"><a href="tel:+913192235888">+91-3192-235888, </a> <br>7063956455</p>
+                                    <p class="media-info"><a href="tel:+913192235888">+91-03192216888, </a> <br>7063956455</p>
                                 </div>
                             </div>
                             <div class="media-style1">

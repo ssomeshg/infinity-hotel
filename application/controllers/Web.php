@@ -347,4 +347,59 @@ class Web extends CI_Controller
 		$this->session->set_flashdata('success', 'Enqury deleted successfully');
 		redirect('tour_enqury_list');
 	}
+
+	public function hotel_enqury_save()
+	{
+		$this->form_validation->set_error_delimiters('', '');
+		$this->form_validation->set_rules('hotel_room_type', 'hotel_room_type', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$errors = [
+				'hotel_room_type' => form_error('name')
+			];
+			echo json_encode(['status' => 'error', 'errors' => $errors]);
+		} else {
+			$recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+			$userIp = $this->input->ip_address();
+			$secret = '6LdSQz4qAAAAAK8lHo9oi4JdtSBGSE58sr7wB6jN';
+			$url = 'https://www.google.com/recaptcha/api/siteverify';
+
+			$response = file_get_contents($url . '?secret=' . $secret . '&response=' . $recaptchaResponse . '&remoteip=' . $userIp);
+			$status = json_decode($response, true);
+
+			if ($status['success']) {
+				$values = [
+					'room_type' => $this->input->post('hotel_room_type'),
+					'no_of_rooms' => $this->input->post('hotel_no_of_rooms'),
+					'add_bed' => $this->input->post('add_bed'),
+					'price' => $this->input->post('price'),
+					'gst' => $this->input->post('gst'),
+					'name' => $this->input->post('name'),
+					'mobile' => $this->input->post('mobile'),
+					'location' => $this->input->post('location'),
+					'check_in' => $this->input->post('check_in'),
+					'check_out' => $this->input->post('check_out'),
+				];
+
+				$insert_id = $this->Common->insert('tbl_hotel_enqury', $values);
+				if ($insert_id) {
+					echo json_encode(['status' => 'success', 'message' => 'Your Enquery has been successfully saved!']);
+				} else {
+					echo json_encode(['status' => 'error', 'message' => 'Failed to add Enquery.']);
+				}
+			} else {
+				echo json_encode(['status' => 'error', 'message' => 'reCAPTCHA verification failed. Please try again.']);
+			}
+		}
+	}
+
+	public function hotel_enqury_delete($id)
+	{
+
+		$where['id'] = $id;
+		$values['status'] = 0;
+		$this->Common->update('tbl_hotel_enqury', $values, $where);
+		$this->session->set_flashdata('success', 'Enqury deleted successfully');
+		redirect('tour_enqury_list');
+	}
 }

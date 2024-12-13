@@ -131,7 +131,7 @@
                             <ul>
                                 <li><i class="far fa-map-marker-alt"></i>Port Blair, A&N Islands</li>
                                 <li><i class="far fa-envelope"></i><a href="mailto:booking@innfinityandaman.com">booking@innfinityandaman.com</a></li>
-                                <li><i class="far fa-phone-alt"></i><a href="tel: +91-3192-235888"> +91-3192-235888</a></li>
+                                <li><i class="far fa-phone-alt"></i><a href="tel: +91-3192-235888"> +91-03192216888</a></li>
                             </ul>
                         </div>
                     </div>

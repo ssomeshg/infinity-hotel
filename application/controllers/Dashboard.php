@@ -47,4 +47,11 @@ class Dashboard extends CI_Controller {
         $this->load->view($this->data['theme'] . '/template');
     }
 
+    public function hotel_room_list() {
+		$this->data['hotel_enqury'] = $this->Common->get_records("tbl_hotel_enqury","*",array('status' => 1));
+        $this->data['page'] = 'hotel_enqury_list';
+        $this->load->vars($this->data);
+        $this->load->view($this->data['theme'] . '/template');
+    }
+
 }
